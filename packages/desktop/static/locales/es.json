@@ -195,6 +195,8 @@
     "spelling": "Ortografía...",
     "changeLanguage": "Cambiar Idioma...",
     "addToDictionary": "Agregar al Diccionario",
+    "ignoreWord": "Ignorar",
+    "noSuggestions": "Sin sugerencias",
     "editDictionary": "Editar Diccionario...",
     "sideBar": {
       "newFile": "Nuevo Archivo",
@@ -757,7 +759,14 @@
       "defaultLanguage": "Idioma predeterminado",
       "enableSpellChecking": "Habilitar corrección ortográfica",
       "hideMarksForErrors": "Ocultar marcas para errores ortográficos",
-      "title": "Corrector Ortográfico"
+      "title": "Corrector Ortográfico",
+      "typingAssistance": {
+        "title": "Asistencia de escritura",
+        "autoCorrect": "Corregir errores comunes al escribir",
+        "autoCorrectDetail": "Corrige errores conocidos como «teh» al terminar una palabra (solo inglés). Pulsa Ctrl/Cmd+Z justo después para deshacer la corrección. Las palabras de tu diccionario nunca se modifican.",
+        "wordCompletion": "Sugerir palabras para completar",
+        "wordCompletionDetail": "Muestra palabras más largas del documento, de tu diccionario y de una lista de palabras en inglés mientras escribes. Tab para aceptar, flechas para elegir, Esc para cerrar."
+      }
     }
   },
   "about": {

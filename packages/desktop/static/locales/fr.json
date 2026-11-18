@@ -195,6 +195,8 @@
     "spelling": "Orthographe...",
     "changeLanguage": "Changer de langue...",
     "addToDictionary": "Ajouter au dictionnaire",
+    "ignoreWord": "Ignorer",
+    "noSuggestions": "Aucune suggestion",
     "editDictionary": "Modifier le dictionnaire...",
     "sideBar": {
       "newFile": "Nouveau fichier",
@@ -757,7 +759,14 @@
       "defaultLanguage": "Langue par défaut",
       "enableSpellChecking": "Activer la vérification orthographique",
       "hideMarksForErrors": "Masquer les marques d'erreurs orthographiques",
-      "title": "Vérification orthographique"
+      "title": "Vérification orthographique",
+      "typingAssistance": {
+        "title": "Aide à la saisie",
+        "autoCorrect": "Corriger les fautes de frappe courantes pendant la saisie",
+        "autoCorrectDetail": "Corrige les fautes connues comme « teh » à la fin d’un mot (anglais uniquement). Appuyez sur Ctrl/Cmd+Z juste après pour annuler la correction. Les mots de votre dictionnaire ne sont jamais modifiés.",
+        "wordCompletion": "Proposer la complétion des mots",
+        "wordCompletionDetail": "Affiche des mots plus longs issus du document, de votre dictionnaire et d’une liste de mots anglais pendant la saisie. Tab pour accepter, flèches pour choisir, Échap pour fermer."
+      }
     }
   },
   "about": {

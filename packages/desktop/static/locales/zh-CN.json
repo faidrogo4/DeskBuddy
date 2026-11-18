@@ -195,6 +195,8 @@
     "spelling": "拼写…",
     "changeLanguage": "更改语言…",
     "addToDictionary": "添加到词典",
+    "ignoreWord": "忽略",
+    "noSuggestions": "无建议",
     "editDictionary": "编辑词典…",
     "sideBar": {
       "newFile": "新建文件",
@@ -757,7 +759,14 @@
       "defaultLanguage": "默认语言",
       "enableSpellChecking": "启用拼写检查",
       "hideMarksForErrors": "隐藏拼写错误标记",
-      "title": "拼写检查器"
+      "title": "拼写检查器",
+      "typingAssistance": {
+        "title": "输入辅助",
+        "autoCorrect": "输入时自动修正常见拼写错误",
+        "autoCorrectDetail": "在输入完一个单词时修正诸如 “teh” 之类的常见拼写错误（仅限英语）。修正后立即按 Ctrl/Cmd+Z 可撤销。词典中的单词不会被修改。",
+        "wordCompletion": "显示单词补全建议",
+        "wordCompletionDetail": "输入时显示来自文档、词典和常用英语词表的更长单词。按 Tab 接受，方向键选择，Esc 关闭。"
+      }
     }
   },
   "about": {

@@ -86,9 +86,11 @@ Preferences can be controlled and modified in the settings window or via the `pr
 
 | Key                     | Type    | Default | Description                                                          |
 | ----------------------- | ------- | ------- | -------------------------------------------------------------------- |
-| spellcheckerEnabled     | Boolean | `false` | Whether spell checking is enabled.                                   |
+| spellcheckerEnabled     | Boolean | `true`  | Whether spell checking is enabled.                                   |
 | spellcheckerNoUnderline | Boolean | `false` | Don't underline spelling mistakes.                                   |
 | spellcheckerLanguage    | String  | `en-US` | The spell-checker language (BCP-47, e.g. `en-US`, `de-DE`, `zh-CN`). |
+| autoCorrectEnabled      | Boolean | `true`  | Fix common typos automatically while typing (English only).          |
+| wordCompletionEnabled   | Boolean | `true`  | Suggest word completions while typing.                               |
 
 #### Image
 

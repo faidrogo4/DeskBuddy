@@ -195,6 +195,8 @@
     "spelling": "Spelling...",
     "changeLanguage": "Change Language...",
     "addToDictionary": "Add to Dictionary",
+    "ignoreWord": "Ignore",
+    "noSuggestions": "No Suggestions",
     "editDictionary": "Edit Dictionary...",
     "sideBar": {
       "newFile": "New File",
@@ -757,7 +759,14 @@
       "defaultLanguage": "Default language",
       "enableSpellChecking": "Enable spell checking",
       "hideMarksForErrors": "Hide marks for spelling errors",
-      "title": "Spell Checker"
+      "title": "Spell Checker",
+      "typingAssistance": {
+        "title": "Typing Assistance",
+        "autoCorrect": "Fix common typos as you type",
+        "autoCorrectDetail": "Corrects well-known misspellings such as \"teh\" when you finish a word (English only). Press Ctrl/Cmd+Z right after a correction to undo it. Words in your dictionary are never changed.",
+        "wordCompletion": "Suggest word completions",
+        "wordCompletionDetail": "Shows longer words from the document, your dictionary and a common English word list while you type. Press Tab to accept, arrow keys to choose, Esc to dismiss."
+      }
     }
   },
   "about": {

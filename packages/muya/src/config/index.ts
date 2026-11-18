@@ -345,6 +345,8 @@ export const MUYA_DEFAULT_OPTIONS = {
     // (and thus the native checker + right-click suggestions) active. Independent
     // of `spellcheckEnabled`.
     spellcheckHideMarks: false,
+    autoCorrect: false,
+    wordCompletion: false,
     // Markdown extensions
     frontMatter: true, // Whether to support frontmatter.
     superSubScript: true,

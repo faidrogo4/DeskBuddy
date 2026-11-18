@@ -29,6 +29,10 @@ export interface IMuyaOptions {
     autoCheck: boolean;
     spellcheckEnabled: boolean;
     spellcheckHideMarks: boolean;
+    /** Fix common typos when a word is finished; needs the WordAssist plugin. */
+    autoCorrect: boolean;
+    /** Offer word completions while typing; needs the WordAssist plugin. */
+    wordCompletion: boolean;
     superSubScript: boolean;
     footnote: boolean;
     texMathDollars: boolean;

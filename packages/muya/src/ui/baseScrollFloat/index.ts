@@ -38,28 +38,33 @@ abstract class BaseScrollFloat extends BaseFloat {
         const handler = (event: Event) => {
             if (!this.status || !isKeyboardEvent(event))
                 return;
-            switch (event.key) {
-                case EVENT_KEYS.ArrowUp:
-                    this.step('previous');
-                    break;
-
-                case EVENT_KEYS.ArrowDown:
-                    // // falls through
-
-                case EVENT_KEYS.Tab:
-                    this.step('next');
-                    break;
-
-                case EVENT_KEYS.Enter:
-                    this.selectItem(this.activeItem);
-                    break;
-
-                default:
-                    break;
-            }
+            this.handleFloatKeydown(event);
         };
 
         eventCenter.attachDOMEvent(domNode, 'keydown', handler);
+    }
+
+    // Runs only while the float is shown.
+    protected handleFloatKeydown(event: KeyboardEvent) {
+        switch (event.key) {
+            case EVENT_KEYS.ArrowUp:
+                this.step('previous');
+                break;
+
+            case EVENT_KEYS.ArrowDown:
+                // // falls through
+
+            case EVENT_KEYS.Tab:
+                this.step('next');
+                break;
+
+            case EVENT_KEYS.Enter:
+                this.selectItem(this.activeItem);
+                break;
+
+            default:
+                break;
+        }
     }
 
     override hide() {

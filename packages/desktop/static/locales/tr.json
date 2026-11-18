@@ -195,6 +195,8 @@
     "spelling": "Yazım...",
     "changeLanguage": "Dili Değiştir...",
     "addToDictionary": "Sözlüğe Ekle",
+    "ignoreWord": "Yoksay",
+    "noSuggestions": "Öneri yok",
     "editDictionary": "Sözlüğü Düzenle...",
     "sideBar": {
       "newFile": "Yeni Dosya",
@@ -757,7 +759,14 @@
       "defaultLanguage": "Varsayılan dil",
       "enableSpellChecking": "Yazım denetimini etkinleştir",
       "hideMarksForErrors": "Yazım hataları için işaretleri gizle",
-      "title": "Yazım Denetleyici"
+      "title": "Yazım Denetleyici",
+      "typingAssistance": {
+        "title": "Yazma yardımı",
+        "autoCorrect": "Yazarken yaygın yazım hatalarını düzelt",
+        "autoCorrectDetail": "Bir kelimeyi bitirdiğinizde \"teh\" gibi bilinen yazım hatalarını düzeltir (yalnızca İngilizce). Düzeltmeyi geri almak için hemen ardından Ctrl/Cmd+Z tuşuna basın. Sözlüğünüzdeki kelimeler asla değiştirilmez.",
+        "wordCompletion": "Kelime tamamlama öner",
+        "wordCompletionDetail": "Yazarken belgeden, sözlüğünüzden ve İngilizce kelime listesinden daha uzun kelimeler gösterir. Kabul etmek için Tab, seçmek için ok tuşları, kapatmak için Esc."
+      }
     }
   },
   "about": {

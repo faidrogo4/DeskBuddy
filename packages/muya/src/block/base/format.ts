@@ -42,6 +42,18 @@ interface IOffsetWithDelta extends IOffset {
 
 const debug = logger('block.format:');
 
+// Token types whose `children` hold visible prose. A word inside any other
+// token (code, math, a link's URL, raw HTML, ...) is markup and must never be
+// autocorrected or completed.
+const PROSE_CONTAINER_TOKENS = new Set<Token['type']>([
+    'strong',
+    'em',
+    'del',
+    'mark',
+    'link',
+    'reference_link',
+]);
+
 function isEmojiToken(token: Token): token is CodeEmojiMathToken {
     return token.type === 'emoji';
 }
@@ -292,6 +304,43 @@ class Format extends Content {
         travel(tokens);
 
         return result;
+    }
+
+    /**
+     * Whether `text[start, end)` lies entirely inside a single plain-text
+     * token, optionally nested in emphasis/link text, of the block's current
+     * text.
+     */
+    isRangeInProse(start: number, end: number): boolean {
+        const tokens = tokenizer(this.text, {
+            hasBeginRules: false,
+            options: this.muya.options,
+        });
+
+        const visit = (list: Token[]): boolean => {
+            for (const token of list) {
+                const { range } = token;
+                if (range.start > start)
+                    return false;
+                if (range.end < end)
+                    continue;
+                if (token.type === 'text')
+                    return true;
+                if (
+                    PROSE_CONTAINER_TOKENS.has(token.type)
+                    && 'children' in token
+                    && Array.isArray(token.children)
+                ) {
+                    return visit(token.children);
+                }
+
+                return false;
+            }
+
+            return false;
+        };
+
+        return visit(tokens);
     }
 
     private _checkNotSameToken(oldText: string, text: string) {
@@ -721,6 +770,13 @@ class Format extends Content {
                 });
             }
         }
+
+        // Must run before `checkInlineUpdate`, which may replace this block.
+        this.muya.eventCenter.emit('muya-text-input', {
+            block: this,
+            inputType,
+            data: inputData,
+        });
 
         this.checkInlineUpdate();
     }

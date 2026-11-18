@@ -53,7 +53,7 @@ export class Ui {
         // so Enter/Tab/arrows over a selection still work (#3196).
         let captured = false;
         for (const tool of this.shownFloat) {
-            if (tool.capturesContentKeydown) {
+            if (tool.capturesContentKey(event.key)) {
                 event.preventDefault();
                 captured = true;
                 break;

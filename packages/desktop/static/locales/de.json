@@ -195,6 +195,8 @@
     "spelling": "Rechtschreibung...",
     "changeLanguage": "Sprache ändern...",
     "addToDictionary": "Zum Wörterbuch hinzufügen",
+    "ignoreWord": "Ignorieren",
+    "noSuggestions": "Keine Vorschläge",
     "editDictionary": "Wörterbuch bearbeiten...",
     "sideBar": {
       "newFile": "Neue Datei",
@@ -757,7 +759,14 @@
       "defaultLanguage": "Standardsprache",
       "enableSpellChecking": "Rechtschreibprüfung aktivieren",
       "hideMarksForErrors": "Markierungen für Rechtschreibfehler ausblenden",
-      "title": "Rechtschreibprüfung"
+      "title": "Rechtschreibprüfung",
+      "typingAssistance": {
+        "title": "Schreibhilfe",
+        "autoCorrect": "Häufige Tippfehler beim Schreiben korrigieren",
+        "autoCorrectDetail": "Korrigiert bekannte Tippfehler wie „teh“, sobald ein Wort fertig ist (nur Englisch). Drücke direkt danach Strg/Cmd+Z, um eine Korrektur rückgängig zu machen. Wörter aus deinem Wörterbuch werden nie geändert.",
+        "wordCompletion": "Wortvervollständigung vorschlagen",
+        "wordCompletionDetail": "Zeigt beim Tippen längere Wörter aus dem Dokument, deinem Wörterbuch und einer englischen Wortliste an. Tab übernimmt, Pfeiltasten wählen aus, Esc schließt."
+      }
     }
   },
   "about": {

@@ -56,6 +56,8 @@ export interface IUserPreferences {
   spellcheckerEnabled?: boolean
   spellcheckerNoUnderline?: boolean
   spellcheckerLanguage?: string
+  autoCorrectEnabled?: boolean
+  wordCompletionEnabled?: boolean
   imageInsertAction?: 'upload' | 'folder' | 'path'
   imagePreferRelativePath?: boolean
   imageFolderPath?: string
