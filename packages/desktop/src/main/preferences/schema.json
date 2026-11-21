@@ -360,7 +360,7 @@
   "spellcheckerEnabled": {
     "description": "Spelling--Whether spell checking is enabled.",
     "type": "boolean",
-    "default": false
+    "default": true
   },
   "spellcheckerNoUnderline": {
     "description": "Spelling--Don't underline spelling mistakes.",
@@ -372,6 +372,16 @@
     "type": "string",
     "pattern": "^[a-z]{2,3}(?:[-](?:[0-9]|[a-zA-Z]){2,}){0,2}$",
     "default": "en-US"
+  },
+  "autoCorrectEnabled": {
+    "description": "Spelling--Fix common typos automatically while typing.",
+    "type": "boolean",
+    "default": true
+  },
+  "wordCompletionEnabled": {
+    "description": "Spelling--Suggest word completions while typing.",
+    "type": "boolean",
+    "default": true
   },
   "imageInsertAction": {
     "description": "Image--The default behavior after insert image from local folder",

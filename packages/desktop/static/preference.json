@@ -71,9 +71,11 @@
   "darkModeTheme": "dark",
   "customCss": "",
 
-  "spellcheckerEnabled": false,
+  "spellcheckerEnabled": true,
   "spellcheckerNoUnderline": false,
   "spellcheckerLanguage": "en-US",
+  "autoCorrectEnabled": true,
+  "wordCompletionEnabled": true,
 
   "sideBarVisibility": false,
   "tabBarVisibility": false,

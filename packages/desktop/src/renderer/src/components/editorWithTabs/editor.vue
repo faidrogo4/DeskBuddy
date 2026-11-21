@@ -112,6 +112,7 @@ import {
   TableColumnToolbar,
   TableDragBar,
   TableRowColumMenu,
+  WordAssist,
   wordCount as muyaWordCount,
   type IHistorySelection,
   type IPreviewDiagramPayload,
@@ -130,6 +131,7 @@ import notice from '@/services/notification'
 import Printer from '@/services/printService'
 import { SpellcheckerLanguageCommand } from '@/commands'
 import { SpellChecker } from '@/spellchecker'
+import { startWordAssist, wordAssistHooks } from '@/spellchecker/wordAssist'
 import { isMac, animatedScrollTo } from '@/util'
 import { moveImageToFolder, uploadImage } from '@/util/fileSystem'
 import { guessClipboardFilePath } from '@/util/clipboard'
@@ -236,6 +238,8 @@ const {
   spellcheckerEnabled,
   spellcheckerNoUnderline,
   spellcheckerLanguage,
+  autoCorrectEnabled,
+  wordCompletionEnabled,
   language,
 
   // Edit modes
@@ -777,6 +781,14 @@ watch(spellcheckerLanguage, (value, oldValue) => {
   if (value !== oldValue && spellchecker) {
     spellchecker.lang = value
   }
+})
+
+watch(autoCorrectEnabled, (value) => {
+  editor.value?.setOptions({ autoCorrect: value })
+})
+
+watch(wordCompletionEnabled, (value) => {
+  editor.value?.setOptions({ wordCompletion: value })
 })
 
 watch(
@@ -1812,6 +1824,7 @@ onMounted(() => {
     Muya.use(TableColumnToolbar)
     Muya.use(TableDragBar)
     Muya.use(TableRowColumMenu)
+    Muya.use(WordAssist, wordAssistHooks)
   }
 
   const options: Partial<IMuyaOptions> = {
@@ -1853,6 +1866,8 @@ onMounted(() => {
     plantumlServer: preferencesStore.plantumlServer,
     spellcheckEnabled: spellcheckerEnabled.value,
     spellcheckHideMarks: spellcheckerNoUnderline.value,
+    autoCorrect: autoCorrectEnabled.value,
+    wordCompletion: wordCompletionEnabled.value,
     // Resolve the OS clipboard to a local file path on paste (image-from-file).
     clipboardFilePath: guessClipboardFilePath,
     // Read the OS clipboard's plain text for "Paste as Plain Text" (execCommand('paste') no longer fires).
@@ -1916,6 +1931,8 @@ onMounted(() => {
 
   // Create spell check wrapper and enable spell checking if preferred.
   spellchecker = new SpellChecker(spellcheckerEnabled.value, spellcheckerLanguage.value)
+  // macOS has no language setting: its spell checker detects the language.
+  startWordAssist(() => (isMac ? navigator.language : spellcheckerLanguage.value))
 
   // Register command palette entry for switching spellchecker language.
   switchLanguageCommand = new SpellcheckerLanguageCommand(spellchecker)

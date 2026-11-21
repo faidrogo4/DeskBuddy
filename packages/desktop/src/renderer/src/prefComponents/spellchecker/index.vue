@@ -34,6 +34,22 @@
       </template>
     </compound>
 
+    <h6 class="title">
+      {{ t('preferences.spellchecker.typingAssistance.title') }}
+    </h6>
+    <bool
+      :description="t('preferences.spellchecker.typingAssistance.autoCorrect')"
+      :detailed-description="t('preferences.spellchecker.typingAssistance.autoCorrectDetail')"
+      :bool="autoCorrectEnabled"
+      :on-change="(value) => onSelectChange('autoCorrectEnabled', value)"
+    />
+    <bool
+      :description="t('preferences.spellchecker.typingAssistance.wordCompletion')"
+      :detailed-description="t('preferences.spellchecker.typingAssistance.wordCompletionDetail')"
+      :bool="wordCompletionEnabled"
+      :on-change="(value) => onSelectChange('wordCompletionEnabled', value)"
+    />
+
     <div
       v-if="isOsx && spellcheckerEnabled"
       class="description"
@@ -86,7 +102,7 @@
 import log from 'electron-log'
 import { usePreferencesStore } from '@/store/preferences'
 import type { PreferencesState } from '@/store/preferences'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { storeToRefs } from 'pinia'
 import Compound from '../common/compound/index.vue'
 import CurSelect from '../common/select/index.vue'
@@ -110,8 +126,15 @@ const wordsInCustomDictionary = ref<CustomDictionaryWord[]>([])
 
 const preferenceStore = usePreferencesStore()
 
-const { spellcheckerEnabled, spellcheckerNoUnderline, spellcheckerLanguage } =
-  storeToRefs(preferenceStore)
+const {
+  spellcheckerEnabled,
+  spellcheckerNoUnderline,
+  spellcheckerLanguage,
+  autoCorrectEnabled,
+  wordCompletionEnabled
+} = storeToRefs(preferenceStore)
+
+let stopWatchingDictionary: (() => void) | null = null
 
 onMounted(async () => {
   if (isOsx) {
@@ -120,6 +143,16 @@ onMounted(async () => {
 
   availableDictionaries.value = await getAvailableDictionaries()
 
+  loadCustomDictionary()
+  stopWatchingDictionary = window.electron.ipcRenderer.on(
+    'mt::spellchecker-dictionary-changed',
+    loadCustomDictionary
+  )
+})
+
+onBeforeUnmount(() => stopWatchingDictionary?.())
+
+const loadCustomDictionary = (): void => {
   window.electron.ipcRenderer
     .invoke('mt::spellchecker-get-custom-dictionary-words')
     .then((words) => {
@@ -127,7 +160,7 @@ onMounted(async () => {
         return { word }
       })
     })
-})
+}
 
 const getAvailableDictionaries = async (): Promise<PrefSelectOption<string>[]> => {
   const dictionaries = await SpellChecker.getAvailableDictionaries()

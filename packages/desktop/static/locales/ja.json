@@ -195,6 +195,8 @@
     "spelling": "スペルチェック...",
     "changeLanguage": "言語の変更...",
     "addToDictionary": "辞書に追加",
+    "ignoreWord": "無視",
+    "noSuggestions": "候補なし",
     "editDictionary": "辞書の編集...",
     "sideBar": {
       "newFile": "新しいファイル",
@@ -757,7 +759,14 @@
       "defaultLanguage": "デフォルト言語",
       "enableSpellChecking": "スペルチェックを有効",
       "hideMarksForErrors": "スペルエラーのマークを隠す",
-      "title": "スペルチェック"
+      "title": "スペルチェック",
+      "typingAssistance": {
+        "title": "入力支援",
+        "autoCorrect": "入力中によくある誤字を自動修正",
+        "autoCorrectDetail": "単語の入力を終えたときに「teh」などのよくある綴り間違いを修正します（英語のみ）。修正直後に Ctrl/Cmd+Z で元に戻せます。辞書に登録した単語は変更されません。",
+        "wordCompletion": "単語の補完候補を表示",
+        "wordCompletionDetail": "入力中に、文書・辞書・英単語リストからより長い単語を表示します。Tab で確定、矢印キーで選択、Esc で閉じます。"
+      }
     }
   },
   "about": {

@@ -1,25 +1,104 @@
-import { BrowserWindow, ipcMain } from 'electron'
+import fs from 'fs'
+import path from 'path'
+import { app, BrowserWindow, ipcMain, session } from 'electron'
 import log from 'electron-log'
 import { isOsx } from '../config'
+import { IgnoredWords } from './ignoredWords'
+
+// Editor windows all use the default session, so its dictionary (and with it
+// the ignore list) is shared by every window.
+let ignoredWords: IgnoredWords | null = null
+
+const getIgnoredWords = (): IgnoredWords => {
+  if (ignoredWords) return ignoredWords
+  const file = path.join(app.getPath('userData'), 'spellchecker-ignored-words.json')
+  ignoredWords = new IgnoredWords(
+    {
+      add: (word) => session.defaultSession.addWordToSpellCheckerDictionary(word),
+      remove: (word) => session.defaultSession.removeWordFromSpellCheckerDictionary(word)
+    },
+    {
+      read: () => {
+        try {
+          const words: unknown = JSON.parse(fs.readFileSync(file, 'utf8'))
+          return Array.isArray(words) ? words.filter((w) => typeof w === 'string') : []
+        } catch {
+          return []
+        }
+      },
+      write: (words) => {
+        try {
+          fs.writeFileSync(file, JSON.stringify(words))
+        } catch (error) {
+          log.warn('Unable to save ignored spelling words:', error)
+        }
+      }
+    }
+  )
+  return ignoredWords
+}
+
+/**
+ * Tell every window that the set of accepted words changed, so autocorrect
+ * and word completion stop or start using a word right away.
+ */
+const notifyDictionaryChanged = (): void => {
+  for (const win of BrowserWindow.getAllWindows()) {
+    win.webContents.send('mt::spellchecker-dictionary-changed')
+  }
+}
 
 /**
  * Add the given word to the spellchecker dictionary.
  */
 export const addToDictionary = (win: BrowserWindow, word: string): boolean => {
-  return win.webContents.session.addWordToSpellCheckerDictionary(word)
+  const ignored = getIgnoredWords()
+  // An ignored word is already in Chromium's dictionary (where `add` would
+  // report a duplicate); it only has to be exempted from the cleanup.
+  if (ignored.has(word)) {
+    ignored.keep(word)
+    return true
+  }
+  const added = win.webContents.session.addWordToSpellCheckerDictionary(word)
+  if (added) notifyDictionaryChanged()
+  return added
+}
+
+/**
+ * Stop flagging `word` until MarkText quits, without saving it to the
+ * dictionary.
+ */
+export const ignoreWord = (word: string): boolean => {
+  const ignored = getIgnoredWords().ignore(word)
+  if (ignored) notifyDictionaryChanged()
+  return ignored
 }
 
 /**
  * Remove the given word from the spellchecker dictionary.
  */
 export const removeFromDictionary = (win: BrowserWindow, word: string): boolean => {
-  return win.webContents.session.removeWordFromSpellCheckerDictionary(word)
+  getIgnoredWords().keep(word)
+  const removed = win.webContents.session.removeWordFromSpellCheckerDictionary(word)
+  if (removed) notifyDictionaryChanged()
+  return removed
 }
 
 /**
- * Returns a list of all words in the custom dictionary.
+ * Returns the words the user saved to the custom dictionary. Ignored words
+ * are in Chromium's dictionary too, but only for this run, so they are hidden.
  */
 export const getCustomDictionaryWords = async(win: BrowserWindow): Promise<string[]> => {
+  const words = await win.webContents.session.listWordsInSpellCheckerDictionary()
+  const ignored = getIgnoredWords()
+  return words.filter((word) => !ignored.has(word))
+}
+
+/**
+ * Every word the spell checker currently accepts beyond its built-in
+ * dictionary: saved words plus words ignored for this run.
+ */
+export const getKnownWords = async(win: BrowserWindow): Promise<string[]> => {
   return win.webContents.session.listWordsInSpellCheckerDictionary()
 }
 
@@ -56,6 +135,19 @@ export const getAvailableDictionaries = (win: BrowserWindow): string[] => {
 }
 
 const registerSpellcheckerHandlers = (): void => {
+  app.whenReady().then(async() => {
+    try {
+      // Wait for Chromium to load the dictionary before editing it.
+      await session.defaultSession.listWordsInSpellCheckerDictionary()
+      getIgnoredWords().purgeStale()
+    } catch (error) {
+      log.warn('Unable to clean up ignored spelling words:', error)
+    }
+  })
+  app.on('will-quit', () => {
+    ignoredWords?.releaseAll()
+  })
+
   ipcMain.handle('mt::spellchecker-remove-word', async(e, word: string) => {
     const win = BrowserWindow.fromWebContents(e.sender)
     if (!win) return false
@@ -85,6 +177,11 @@ const registerSpellcheckerHandlers = (): void => {
     const win = BrowserWindow.fromWebContents(e.sender)
     if (!win) return []
     return getCustomDictionaryWords(win)
+  })
+  ipcMain.handle('mt::spellchecker-get-known-words', async(e) => {
+    const win = BrowserWindow.fromWebContents(e.sender)
+    if (!win) return []
+    return getKnownWords(win)
   })
 }
 

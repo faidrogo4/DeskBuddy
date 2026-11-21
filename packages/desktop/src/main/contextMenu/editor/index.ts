@@ -11,7 +11,7 @@ import {
   getInsertBefore,
   getInsertAfter
 } from './menuItems'
-import spellcheckMenuBuilder from './spellcheck'
+import spellcheckMenuBuilder, { buildMisspelledWordItems } from './spellcheck'
 import { t } from '../../i18n'
 import { isOsx } from '../../config'
 
@@ -96,15 +96,16 @@ export const showEditorContextMenu = (
     }
 
     if (isSpellcheckerEnabled) {
-      const spellingSubmenu = spellcheckMenuBuilder(
-        isMisspelled,
-        misspelledWord,
-        dictionarySuggestions
-      )
+      if (isMisspelled && misspelledWord) {
+        for (const item of buildMisspelledWordItems(misspelledWord, dictionarySuggestions ?? [])) {
+          menu.append(new MenuItem(item))
+        }
+        menu.append(new MenuItem(SEPARATOR))
+      }
       menu.append(
         new MenuItem({
           label: t('contextMenu.spelling'),
-          submenu: spellingSubmenu as Electron.MenuItemConstructorOptions[]
+          submenu: spellcheckMenuBuilder()
         })
       )
       menu.append(new MenuItem(SEPARATOR))

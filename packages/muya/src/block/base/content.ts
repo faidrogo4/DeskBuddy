@@ -900,6 +900,20 @@ class Content extends TreeNode {
         return true;
     }
 
+    /**
+     * Replace `text[start, end)` with `replacement` and re-render, leaving the
+     * caret at `cursorOffset` (default: just after the replacement). Unlike
+     * `replaceCurrentWordInlineUnsafe` the caller owns the range, so it must
+     * have been computed against the block's current text.
+     */
+    replaceTextInline(start: number, end: number, replacement: string, cursorOffset?: number): void {
+        const { text } = this;
+        this.text = text.substring(0, start) + replacement + text.substring(end);
+
+        const offset = cursorOffset ?? start + replacement.length;
+        this.setCursor(offset, offset, true);
+    }
+
     keydownHandler = (event: Event) => {
         if (!isKeyboardEvent(event))
             return;

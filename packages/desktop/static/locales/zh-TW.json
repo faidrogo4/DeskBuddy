@@ -195,6 +195,8 @@
     "spelling": "拼字檢查…",
     "changeLanguage": "變更語言…",
     "addToDictionary": "加入字典",
+    "ignoreWord": "忽略",
+    "noSuggestions": "沒有建議",
     "editDictionary": "編輯字典…",
     "sideBar": {
       "newFile": "新建檔案",
@@ -757,7 +759,14 @@
       "defaultLanguage": "預設語言",
       "enableSpellChecking": "啟用拼字檢查",
       "hideMarksForErrors": "隱藏拼字錯誤標記",
-      "title": "拼字檢查"
+      "title": "拼字檢查",
+      "typingAssistance": {
+        "title": "輸入輔助",
+        "autoCorrect": "輸入時自動修正常見拼寫錯誤",
+        "autoCorrectDetail": "在輸入完一個單字時修正如 “teh” 之類的常見拼寫錯誤（僅限英文）。修正後立即按 Ctrl/Cmd+Z 可復原。字典中的單字不會被修改。",
+        "wordCompletion": "顯示單字自動完成建議",
+        "wordCompletionDetail": "輸入時顯示來自文件、字典和常用英文單字表的較長單字。按 Tab 接受，方向鍵選擇，Esc 關閉。"
+      }
     }
   },
   "about": {

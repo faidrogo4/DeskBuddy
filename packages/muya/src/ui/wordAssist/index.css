@@ -1,0 +1,58 @@
+.mu-word-assist-wrapper {
+    z-index: 100000;
+}
+
+.mu-word-assist-wrapper .mu-word-assist {
+    box-sizing: border-box;
+    min-width: 160px;
+    max-width: 320px;
+    padding: 4px 0;
+
+    font-size: 14px;
+}
+
+.mu-word-assist-wrapper .mu-word-assist ul,
+.mu-word-assist-wrapper .mu-word-assist li {
+    margin: 0;
+    padding: 0;
+}
+
+.mu-word-assist-wrapper .mu-word-assist .item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    height: 26px;
+    padding: 0 10px;
+
+    list-style: none;
+    cursor: pointer;
+}
+
+.mu-word-assist-wrapper .mu-word-assist .item.active,
+.mu-word-assist-wrapper .mu-word-assist .item:hover {
+    background-color: var(--float-hover-color);
+}
+
+.mu-word-assist-wrapper .mu-word-assist .text {
+    overflow: hidden;
+
+    color: var(--editor-color);
+    line-height: 26px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mu-word-assist-wrapper .mu-word-assist .hint {
+    padding: 0 4px;
+
+    color: var(--editor-color-50, inherit);
+    font-size: 11px;
+    font-family: inherit;
+    line-height: 16px;
+
+    border: 1px solid var(--editor-color-10, rgb(127 127 127 / 30%));
+    border-radius: 3px;
+
+    opacity: 0.7;
+}

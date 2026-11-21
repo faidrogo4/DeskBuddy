@@ -12,8 +12,11 @@ function makeUi(): Ui {
     return new Ui(muya);
 }
 
-function fakeFloat(capturesContentKeydown: boolean): BaseFloat {
-    return { capturesContentKeydown } as unknown as BaseFloat;
+function fakeFloat(capturesContentKeydown: boolean, capturedKeys?: string[]): BaseFloat {
+    return {
+        capturesContentKeydown,
+        capturesContentKey: (key: string) => capturedKeys ? capturedKeys.includes(key) : capturesContentKeydown,
+    } as unknown as BaseFloat;
 }
 
 function keyEvent(key: string): KeyboardEvent {
@@ -21,6 +24,18 @@ function keyEvent(key: string): KeyboardEvent {
 }
 
 describe('ui.handleContentKeydown', () => {
+    it('asks the float per key, so a float can leave Enter to the block', () => {
+        const ui = makeUi();
+        ui.shownFloat.add(fakeFloat(true, ['Tab']));
+        const enter = keyEvent('Enter');
+        const tab = keyEvent('Tab');
+
+        expect(ui.handleContentKeydown(enter)).toBe(false);
+        expect(enter.preventDefault).not.toHaveBeenCalled();
+        expect(ui.handleContentKeydown(tab)).toBe(true);
+        expect(tab.preventDefault).toHaveBeenCalledOnce();
+    });
+
     it('returns false when no float is shown', () => {
         const ui = makeUi();
         const event = keyEvent('Enter');

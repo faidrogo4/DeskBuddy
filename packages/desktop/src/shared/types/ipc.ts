@@ -92,6 +92,7 @@ export interface IpcInvokeChannels {
   'mt::shell::open-path': { args: [fullPath: string]; ret: string }
   'mt::spellchecker-get-available-dictionaries': { args: []; ret: string[] }
   'mt::spellchecker-get-custom-dictionary-words': { args: []; ret: string[] }
+  'mt::spellchecker-get-known-words': { args: []; ret: string[] }
   'mt::spellchecker-remove-word': { args: [word: string]; ret: boolean }
   'mt::spellchecker-set-enabled': { args: [enabled: boolean]; ret: void }
   'mt::spellchecker-switch-language': { args: [language: string]; ret: void }
@@ -287,6 +288,7 @@ export interface IpcMainEventChannels {
   'mt::show-export-dialog': [type: ExportType]
   'mt::show-notification': [payload: unknown]
   'mt::spelling-replace-misspelling': [payload: unknown]
+  'mt::spellchecker-dictionary-changed': []
   'mt::spelling-show-switch-language': []
   'mt::switch-tab-by-file_path': [filePath: string, options?: TabOptions]
   'mt::switch-tab-by-index': [index: number]

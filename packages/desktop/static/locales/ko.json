@@ -195,6 +195,8 @@
     "spelling": "맞춤법...",
     "changeLanguage": "언어 변경...",
     "addToDictionary": "사전에 추가",
+    "ignoreWord": "무시",
+    "noSuggestions": "추천 단어 없음",
     "editDictionary": "사전 편집...",
     "sideBar": {
       "newFile": "새 파일",
@@ -757,7 +759,14 @@
       "defaultLanguage": "기본 언어",
       "enableSpellChecking": "맞춤법 검사 활성화",
       "hideMarksForErrors": "맞춤법 오류 표시 숨기기",
-      "title": "맞춤법 검사기"
+      "title": "맞춤법 검사기",
+      "typingAssistance": {
+        "title": "입력 도우미",
+        "autoCorrect": "입력 중 흔한 오타 자동 수정",
+        "autoCorrectDetail": "단어 입력을 마치면 \"teh\" 같은 흔한 철자 오류를 수정합니다(영어만). 수정 직후 Ctrl/Cmd+Z를 누르면 되돌립니다. 사전에 있는 단어는 바뀌지 않습니다.",
+        "wordCompletion": "단어 자동 완성 제안",
+        "wordCompletionDetail": "입력하는 동안 문서, 사전, 영어 단어 목록에서 더 긴 단어를 보여 줍니다. Tab으로 선택, 화살표 키로 이동, Esc로 닫습니다."
+      }
     }
   },
   "about": {

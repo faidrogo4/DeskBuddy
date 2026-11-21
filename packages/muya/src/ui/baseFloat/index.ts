@@ -44,6 +44,12 @@ abstract class BaseFloat {
         this.init();
     }
 
+    // Per-key refinement of `capturesContentKeydown`, for a float that owns
+    // some navigation keys but must leave others (e.g. Enter) to the content.
+    capturesContentKey(_key: string): boolean {
+        return this.capturesContentKeydown;
+    }
+
     init() {
         const floatBox = document.createElement('div');
         const container = document.createElement('div');

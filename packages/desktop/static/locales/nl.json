@@ -195,6 +195,8 @@
     "spelling": "Spelling...",
     "changeLanguage": "Taal wijzigen...",
     "addToDictionary": "Toevoegen aan woordenboek",
+    "ignoreWord": "Negeren",
+    "noSuggestions": "Geen suggesties",
     "editDictionary": "Woordenboek bewerken...",
     "sideBar": {
       "newFile": "Nieuw bestand",
@@ -757,7 +759,14 @@
       "defaultLanguage": "Standaardtaal",
       "enableSpellChecking": "Spellingcontrole inschakelen",
       "hideMarksForErrors": "Markering voor spelfouten verbergen",
-      "title": "Spellingcontrole"
+      "title": "Spellingcontrole",
+      "typingAssistance": {
+        "title": "Typhulp",
+        "autoCorrect": "Veelvoorkomende typfouten tijdens het typen verbeteren",
+        "autoCorrectDetail": "Verbetert bekende typfouten zoals \"teh\" zodra je een woord afmaakt (alleen Engels). Druk direct daarna op Ctrl/Cmd+Z om de verbetering ongedaan te maken. Woorden in je woordenboek worden nooit gewijzigd.",
+        "wordCompletion": "Woordaanvulling voorstellen",
+        "wordCompletionDetail": "Toont tijdens het typen langere woorden uit het document, je woordenboek en een Engelse woordenlijst. Tab om te accepteren, pijltjestoetsen om te kiezen, Esc om te sluiten."
+      }
     }
   },
   "about": {

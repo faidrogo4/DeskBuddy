@@ -101,6 +101,8 @@ export interface PreferencesState {
   spellcheckerEnabled: boolean
   spellcheckerNoUnderline: boolean
   spellcheckerLanguage: string
+  autoCorrectEnabled: boolean
+  wordCompletionEnabled: boolean
 
   // ----- Side bar / tab bar visibility (persisted) -----
   sideBarVisibility: boolean
@@ -220,9 +222,11 @@ export const usePreferencesStore = defineStore('preferences', {
     darkModeTheme: 'dark',
     customCss: '',
 
-    spellcheckerEnabled: false,
+    spellcheckerEnabled: true,
     spellcheckerNoUnderline: false,
     spellcheckerLanguage: 'en-US',
+    autoCorrectEnabled: true,
+    wordCompletionEnabled: true,
 
     // Default values that are overwritten with the entries below.
     sideBarVisibility: false,
