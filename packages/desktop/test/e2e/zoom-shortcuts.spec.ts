@@ -44,7 +44,8 @@ test.describe('zoom keyboard shortcuts', () => {
     await checkKeys()
     await expect(page.locator('.editor-component')).toContainText('Document text')
     const content = await page.locator('.editor-component .mu-container').evaluate((root) => {
-      const block = (root as Element & { __MUYA_BLOCK__: { muya: { getMarkdown(): string } } }).__MUYA_BLOCK__
+      const block = (root as unknown as { __MUYA_BLOCK__: { muya: { getMarkdown(): string } } })
+        .__MUYA_BLOCK__
       return block.muya.getMarkdown().trim()
     })
     expect(content).toBe(markdown.trim())
@@ -56,7 +57,8 @@ test.describe('zoom keyboard shortcuts', () => {
     await checkKeys()
     await expect(page.locator('.source-code .CodeMirror')).toContainText('Document text')
     const content = await page.locator('.editor-component .mu-container').evaluate((root) => {
-      const block = (root as Element & { __MUYA_BLOCK__: { muya: { getMarkdown(): string } } }).__MUYA_BLOCK__
+      const block = (root as unknown as { __MUYA_BLOCK__: { muya: { getMarkdown(): string } } })
+        .__MUYA_BLOCK__
       return block.muya.getMarkdown().trim()
     })
     expect(content).toBe(markdown.trim())
