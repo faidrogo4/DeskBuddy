@@ -25,6 +25,20 @@ export function shouldCrossBlockCut(key: string, metaKey: boolean, ctrlKey: bool
     return true;
 }
 
+// Chromium shares one native selection across every editor in the window, so a
+// range can end in a sibling editor's root. A caret that is inside `root` but
+// resolves to no content block (e.g. on the container after `setContent('')`)
+// is not foreign: native input lands it and the input pipeline adopts it.
+export function nativeSelectionLeavesRoot(root: HTMLElement): boolean {
+    const selection = root.ownerDocument.getSelection();
+    if (!selection?.rangeCount)
+        return false;
+
+    const { anchorNode, focusNode } = selection;
+
+    return !anchorNode || !focusNode || !root.contains(anchorNode) || !root.contains(focusNode);
+}
+
 const FOREIGN_INPUT_TYPES = new Set([
     'deleteByCut',
     'deleteByDrag',
@@ -104,13 +118,12 @@ class Clipboard {
             }
 
             const selection = this.selection.getSelection();
-            if (!selection) {
-                // A range crossing editor roots cannot be applied to either document.
-                if (document.getSelection()?.rangeCount)
-                    event.preventDefault();
+            if (!selection && nativeSelectionLeavesRoot(this.muya.domNode)) {
+                // A range reaching outside this root cannot be applied to its document.
+                event.preventDefault();
                 return;
             }
-            if (selection.isSelectionInSameBlock)
+            if (selection?.isSelectionInSameBlock)
                 return;
 
             if (!shouldCrossBlockCut(key, metaKey, event.ctrlKey))
@@ -142,11 +155,11 @@ class Clipboard {
                 return;
 
             const selection = this.selection.getSelection();
-            if (!selection) {
+            if (!selection && nativeSelectionLeavesRoot(this.muya.domNode)) {
                 event.preventDefault();
                 return;
             }
-            if (selection.isSelectionInSameBlock)
+            if (selection?.isSelectionInSameBlock !== false)
                 return;
 
             event.preventDefault();

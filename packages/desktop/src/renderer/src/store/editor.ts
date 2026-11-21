@@ -935,11 +935,14 @@ export const useEditorStore = defineStore('editor', {
           }
         }
         window.DIRNAME = pathname ? window.path.dirname(pathname) : ''
-        this.currentFile = currentFile
+        // Reset the outgoing tab's selection state before switching: each pane
+        // watches its file with `flush: 'sync'` and restores the incoming tab's
+        // selection (and its count) inside the `currentFile` assignment.
         this.selectionWordCount = null
-        didUpdateCurrentFile = true
         // Slugs belong to the old document; the next selection-change re-seeds.
         this.activeHeadingSlug = null
+        this.currentFile = currentFile
+        didUpdateCurrentFile = true
 
         if (!this.tabs.some((file) => file.id === currentFile.id)) {
           this.tabs.push(currentFile)
@@ -1123,8 +1126,9 @@ export const useEditorStore = defineStore('editor', {
       if (currentFile && file.id === currentFile.id) {
         const fileState: IFileState | null =
           this.tabs[index] ?? this.tabs[index - 1] ?? this.tabs[0] ?? null
-        this.currentFile = fileState
+        // Before the switch, as in UPDATE_CURRENT_FILE.
         this.selectionWordCount = null
+        this.currentFile = fileState
         if (fileState && typeof fileState.markdown === 'string') {
           const { id, markdown, cursor, history, pathname, scrollTop, blocks, muyaIndexCursor } =
             fileState
@@ -1217,8 +1221,9 @@ export const useEditorStore = defineStore('editor', {
       this.updateTabIdToIndex() // Update before sending it out to prevent stale mappings.
 
       if (this.currentFile == null && this.tabs.length > 0) {
-        this.currentFile = this.tabs[tabIndex] ?? this.tabs[tabIndex - 1] ?? this.tabs[0] ?? null
+        // Before the switch, as in UPDATE_CURRENT_FILE.
         this.selectionWordCount = null
+        this.currentFile = this.tabs[tabIndex] ?? this.tabs[tabIndex - 1] ?? this.tabs[0] ?? null
         if (this.currentFile && typeof this.currentFile.markdown === 'string') {
           const { id, markdown, cursor, history, pathname, scrollTop, blocks, muyaIndexCursor } =
             this.currentFile

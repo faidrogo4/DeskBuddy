@@ -1287,7 +1287,9 @@ const scrollToCords = (y: number) => {
     if (!container) return
     // wait for the padding to be applied (if any)
     container.style.visibility = 'visible'
-    container.style.pointerEvents = 'auto'
+    // Clear rather than force `auto`: an inline value would beat the
+    // stylesheet's `pointer-events: none` for an open viewer or source mode.
+    container.style.pointerEvents = ''
     container.scrollTop = y
   })
 }
@@ -1704,7 +1706,7 @@ const handleFileChange = (payload: unknown) => {
     scrollToCords(scrollTop)
   } else {
     container.style.visibility = 'visible'
-    container.style.pointerEvents = 'auto'
+    container.style.pointerEvents = ''
     scrollToCursor(0)
   }
 }
