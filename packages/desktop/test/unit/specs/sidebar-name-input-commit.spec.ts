@@ -18,7 +18,7 @@ vi.hoisted(() => {
 
   const w = globalThis as unknown as {
     window?: {
-      marktext?: { env?: { windowId?: number } }
+      deskbuddy?: { env?: { windowId?: number } }
       path?: {
         sep: string
         join: (...parts: string[]) => string
@@ -46,7 +46,7 @@ vi.hoisted(() => {
   }
   const dirname = (p: string): string => p.split('/').slice(0, -1).join('/') || '/'
   w.window ??= {}
-  w.window.marktext ??= { env: { windowId: 1 } }
+  w.window.deskbuddy ??= { env: { windowId: 1 } }
   w.window.path ??= {
     sep: '/',
     join: (...parts) => parts.join('/'),

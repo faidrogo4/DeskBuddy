@@ -8,9 +8,9 @@ import type { BootInfo } from '@shared/types/ipc'
 const ENV_ALLOWLIST = [
   'NODE_ENV',
   'APPIMAGE',
-  'MARKTEXT_VERSION',
-  'MARKTEXT_VERSION_STRING',
-  'MARKTEXT_RIPGREP_PATH',
+  'DESKBUDDY_VERSION',
+  'DESKBUDDY_VERSION_STRING',
+  'DESKBUDDY_RIPGREP_PATH',
   'PATH',
   'HOME'
 ]
@@ -25,8 +25,8 @@ const pickEnv = (): Record<string, string> => {
 }
 
 const resolveRipgrepBinary = (): string => {
-  if (process.env.MARKTEXT_RIPGREP_PATH) {
-    return process.env.MARKTEXT_RIPGREP_PATH
+  if (process.env.DESKBUDDY_RIPGREP_PATH) {
+    return process.env.DESKBUDDY_RIPGREP_PATH
   }
   return rgPath.replace(/\bapp\.asar\b/, 'app.asar.unpacked')
 }

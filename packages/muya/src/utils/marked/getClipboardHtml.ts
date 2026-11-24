@@ -29,7 +29,7 @@ export function getClipBoardHtml(src: string, options: ILexOption = {}) {
         walkTokens: walkTokens({ texMathDollars, texMathGfm }),
     });
 
-    // CJK-as-punctuation emphasis flanking (marktext/marktext#4307); keeps the
+    // CJK-as-punctuation emphasis flanking (faidrogo4/DeskBuddy#4307); keeps the
     // clipboard HTML consistent with the static / export render path.
     marked.use(cjkEmStrongExtension());
 

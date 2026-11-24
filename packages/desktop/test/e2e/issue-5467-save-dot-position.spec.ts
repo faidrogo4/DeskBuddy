@@ -24,7 +24,7 @@ test.afterAll(() => {
 const openIn = async(
   folders: string[]
 ): Promise<{ app: ElectronApplication; page: Page }> => {
-  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'marktext-e2etest-5467-'))
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'deskbuddy-e2etest-5467-'))
   roots.push(root)
   const dir = path.join(root, ...folders)
   fs.mkdirSync(dir, { recursive: true })

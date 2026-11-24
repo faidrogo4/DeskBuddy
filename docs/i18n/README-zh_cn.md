@@ -1,12 +1,7 @@
-<p align="center"><img src="../assets/logo-small.png" alt="MarkText" width="100" height="100"></p>
+<p align="center"><img src="../assets/logo-small.png" alt="DeskBuddy" width="100" height="100"></p>
 
-<h1 align="center">MarkText</h1>
+<h1 align="center">DeskBuddy</h1>
 
-<div align="center">
-  <a href="https://twitter.com/intent/tweet?via=marktextme&url=https://github.com/marktext/marktext/&text=What%20do%20you%20want%20to%20say%20to%20app?&hashtags=happyMarkText">
-    <img src="https://img.shields.io/twitter/url/https/github.com/marktext/marktext.svg?style=for-the-badge" alt="twitter">
-  </a>
-</div>
 <div align="center">
   <strong>:high_brightness: 下一代 Markdown 编辑器 :crescent_moon:</strong><br>
   一款专注于速度和易用性的简洁优雅的开源 Markdown 编辑器。<br>
@@ -18,41 +13,25 @@
 <div align="center">
   <!-- License -->
   <a href="../../LICENSE">
-    <img src="https://img.shields.io/github/license/marktext/marktext.svg" alt="LICENSE">
-  </a>
-  <!-- Downloads total -->
-  <a href="https://github.com/marktext/marktext/releases">
-    <img src="https://img.shields.io/github/downloads/marktext/marktext/total.svg" alt="total download">
-  </a>
-  <!-- Downloads latest release -->
-  <a href="https://github.com/marktext/marktext/releases/latest">
-    <img src="https://img.shields.io/github/downloads/marktext/marktext/v0.17.1/total.svg" alt="latest download">
-  </a>
-  <!-- sponsors -->
-  <a href="https://opencollective.com/marktext">
-    <img src="https://opencollective.com/marktext/tiers/silver-sponsors/badge.svg?label=SilverSponsors&color=brightgreen" alt="sponsors">
+    <img src="https://img.shields.io/github/license/faidrogo4/DeskBuddy.svg" alt="LICENSE">
   </a>
 </div>
 
 <div align="center">
   <h3>
-    <a href="https://github.com/marktext/marktext">
-      Website
-    </a>
-    <span> | </span>
-    <a href="https://github.com/marktext/marktext#features">
+    <a href="../../README.md#features">
       功能
     </a>
     <span> | </span>
-    <a href="https://github.com/marktext/marktext#download-and-installation">
+    <a href="../../README.md#download-and-installation">
       下载与安装
     </a>
     <span> | </span>
-    <a href="https://github.com/marktext/marktext#development">
+    <a href="../../README.md#development">
       开发
     </a>
     <span> | </span>
-    <a href="https://github.com/marktext/marktext#contribution">
+    <a href="../../README.md#contribution">
       贡献
     </a>
   </h3>
@@ -95,37 +74,9 @@
   </a>
 </div>
 
-<div align="center">
-  <sub>这款 Markdown 编辑器由
-    <a href="https://github.com/Jocs">Jocs</a> 和
-    <a href="https://github.com/marktext/marktext/graphs/contributors">
-      贡献者们
-    </a>
-    用 ❤︎ 构建。</sub>
-</div>
-
-<br />
-
-<h2 align="center">支持 MarkText</h2>
-
-MarkText 是一款由社区支持驱动的开源 Markdown 编辑器。如果 MarkText 改善了您的工作流程，请考虑[赞助本项目](https://github.com/sponsors/marktext)。感谢所有赞助者 ❤️
-
-**特别赞助商**
-
-<table>
-<tr>
-<td width="182"><a href="https://serpapi.com/?utm_source=marktext"><img src="../assets/sponsors/serpapi.png" width="150"></a></td>
-<td align="left"><a href="https://serpapi.com/?utm_source=marktext">通过我们快速、便捷且完整的 API 抓取 Google 及其他搜索引擎的数据。</a></td>
-</tr>
-<tr>
-<td width="182"><a href="https://stardesk.onelink.me/p0R7/kpq1jksx"><img src="../assets/sponsors/stardesk.png" width="150"></a></td>
-<td align="left"><a href="https://stardesk.onelink.me/p0R7/kpq1jksx">离开工位，工作流照常运转。StarDesk 是一款免费的远程桌面工具，让你随时随地访问自己的开发电脑。通过 iOS、Android 或网页端连接自己的电脑，编辑 Markdown、执行终端命令、审阅文档，或是接着上次中断的地方继续。</a></td>
-</tr>
-</table>
-
 ## 截图
 
-![](../assets/marktext.png?raw=true)
+![](../assets/deskbuddy.png?raw=true)
 
 ## 功能
 
@@ -134,7 +85,7 @@ MarkText 是一款由社区支持驱动的开源 Markdown 编辑器。如果 Mar
 - 支持数学表达式（KaTeX）、Front Matter 和表情符号等 Markdown 扩展。
 - 支持段落和内联样式快捷方式，提升写作效率。
 - 可导出 **HTML** 和 **PDF** 文件。
-- 多种[主题](https://marktext.me/docs/themes)：**Cadmium Light**、**Material Dark** 等。
+- 多种[主题](../../packages/website/content/docs/end-user/THEMES.md)：**Cadmium Light**、**Material Dark** 等。
 - 多种编辑模式：**源代码模式**、**打字机模式**、**专注模式**。
 - 支持直接从剪贴板粘贴图片。
 
@@ -142,62 +93,40 @@ MarkText 是一款由社区支持驱动的开源 Markdown 编辑器。如果 Mar
 
 ![平台](https://img.shields.io/static/v1.svg?label=Platform&message=Linux-64%20|%20macOS-64%20|%20Win-32%20|%20Win-64&style=for-the-badge)
 
-|                                             ![](https://raw.githubusercontent.com/wiki/ryanoasis/nerd-fonts/screenshots/v1.0.x/mac-pass-sm.png)                                             |                                             ![](https://raw.githubusercontent.com/wiki/ryanoasis/nerd-fonts/screenshots/v1.0.x/windows-pass-sm.png)                                             |                                                    ![](https://raw.githubusercontent.com/wiki/ryanoasis/nerd-fonts/screenshots/v1.0.x/linux-pass-sm.png)                                                    |
-| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| [![latest version](https://img.shields.io/github/downloads/marktext/marktext/latest/marktext-x64.dmg.svg)](https://github.com/marktext/marktext/releases/download/v0.17.1/marktext-x64.dmg) | [![latest version](https://img.shields.io/github/downloads/marktext/marktext/latest/marktext-setup.exe.svg)](https://github.com/marktext/marktext/releases/download/v0.17.1/marktext-setup.exe) | [![latest version](https://img.shields.io/github/downloads/marktext/marktext/latest/marktext-x86_64.AppImage.svg)](https://github.com/marktext/marktext/releases/download/v0.17.1/marktext-x86_64.AppImage) |
+|                ![](https://raw.githubusercontent.com/wiki/ryanoasis/nerd-fonts/screenshots/v1.0.x/mac-pass-sm.png)                |                ![](https://raw.githubusercontent.com/wiki/ryanoasis/nerd-fonts/screenshots/v1.0.x/windows-pass-sm.png)                |               ![](https://raw.githubusercontent.com/wiki/ryanoasis/nerd-fonts/screenshots/v1.0.x/linux-pass-sm.png)               |
+| :-------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------: |
+| [![Download for macOS](https://img.shields.io/badge/macOS-Download-blue)](https://github.com/faidrogo4/DeskBuddy/releases/latest) | [![Download for Windows](https://img.shields.io/badge/Windows-Download-blue)](https://github.com/faidrogo4/DeskBuddy/releases/latest) | [![Download for Linux](https://img.shields.io/badge/Linux-Download-blue)](https://github.com/faidrogo4/DeskBuddy/releases/latest) |
 
-想了解最新版本的新功能？请参阅 [CHANGELOG](https://marktext.me/docs/changelog)。
+想了解最新版本的新功能？请参阅 [CHANGELOG](../../packages/website/content/docs/CHANGELOG.md)。
 
 #### macOS
 
-你可以从[发布页](https://github.com/marktext/marktext/releases/latest)下载最新的 `marktext-%version%.dmg`，或通过 [**homebrew cask**](https://github.com/caskroom/homebrew-cask) 安装 MarkText。使用 Homebrew-Cask 只需先安装 [Homebrew](https://brew.sh/)。
-
-```bash
-brew install --cask mark-text
-```
+从[发布页](https://github.com/faidrogo4/DeskBuddy/releases/latest)下载最新的 `deskbuddy-mac-(arm64|x64)-%version%.dmg`。
 
 #### Windows
 
-只需下载并通过安装向导（`marktext-setup-%version%.exe`）安装 MarkText，并选择用户级或系统级安装。或者，使用包管理器 [Chocolatey](https://chocolatey.org/) 或 [Winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/) 安装 MarkText。
-
-使用 Chocolatey，需先安装 [Chocolatey](https://chocolatey.org/install)：
-
-```bash
-choco install marktext
-```
-
-使用 Winget，需先安装 [Winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/#install-winget)：
-
-```bash
-winget install marktext
-```
+只需下载并通过安装向导（`deskbuddy-win-(x64|arm64)-%version%-setup.exe`）安装 DeskBuddy，并选择用户级或系统级安装。
 
 #### Linux
 
-请参阅 [Linux 安装说明](https://marktext.me/docs/installation)。
+请参阅 [Linux 安装说明](../../packages/website/content/docs/end-user/INSTALLATION.md)。
 
 #### 其他
 
-所有 Linux、macOS 和 Windows 的二进制文件均可从[发布页](https://github.com/marktext/marktext/releases/latest)下载。如果你的系统没有对应版本，请提交 [issue](https://github.com/marktext/marktext/issues)。
+所有 Linux、macOS 和 Windows 的二进制文件均可从[发布页](https://github.com/faidrogo4/DeskBuddy/releases/latest)下载。如果你的系统没有对应版本，请提交 [issue](https://github.com/faidrogo4/DeskBuddy/issues)。
 
 ## 开发
 
-如果你希望自行构建 MarkText，请参阅我们的[构建说明](https://marktext.me/docs/dev/build)。
+如果你希望自行构建 DeskBuddy，请参阅我们的[构建说明](../../packages/website/content/docs/dev/BUILD.md)。
 
-- [用户文档](https://marktext.me/docs/introduction)
-- [开发者文档](https://marktext.me/docs/dev/overview)
+- [用户文档](../../packages/website/content/docs/README.md)
+- [开发者文档](../../packages/website/content/docs/dev/README.md)
 
-如果你对 MarkText 有任何疑问，欢迎提交 issue。提交时请使用打开 issue 时的默认格式。当然，如果你直接提交 PR，将不胜感激。
+如果你对 DeskBuddy 有任何疑问，欢迎提交 issue。提交时请使用打开 issue 时的默认格式。当然，如果你直接提交 PR，将不胜感激。
 
 ## 贡献
 
-MarkText 正在开发中，请在提交 pull request 之前确保阅读[贡献指南](../../.github/CONTRIBUTING.md)。想为 MarkText 添加新功能？请参阅我们的[路线图](https://github.com/marktext/marktext/projects)和开放 issue。
-
-## 贡献者
-
-感谢所有已经为 MarkText 做出贡献的人[[贡献者](https://github.com/marktext/marktext/graphs/contributors)]。
-
-<a href="https://github.com/marktext/marktext/graphs/contributors"><img src="https://opencollective.com/marktext/contributors.svg?width=890" /></a>
+DeskBuddy 正在开发中，请在提交 pull request 之前确保阅读[贡献指南](../../.github/CONTRIBUTING.md)。
 
 ## 许可证
 

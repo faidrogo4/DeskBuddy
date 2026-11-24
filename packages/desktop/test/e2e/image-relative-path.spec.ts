@@ -23,7 +23,7 @@ const ONE_BY_ONE_PNG_BASE64 =
 const createdDirs: string[] = []
 
 const writeDocWithRelativeImage = (folderName = ''): { docPath: string; docDir: string } => {
-  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'marktext-e2e-relimg-'))
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'deskbuddy-e2e-relimg-'))
   createdDirs.push(tempDir)
   const docDir = path.join(tempDir, folderName)
   const assetsDir = path.join(docDir, 'assets')

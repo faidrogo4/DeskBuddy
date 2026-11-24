@@ -1,6 +1,6 @@
 <p align="center"><img src="./docs/logo.jpg" alt="muya" height="150"></p>
 
-<p align="center"><b>Muya</b> — a standalone Markdown editor for the web, extracted from <a href="https://github.com/marktext/marktext">MarkText</a>.</p>
+<p align="center"><b>Muya</b> — a standalone Markdown editor for the web, extracted from <a href="https://github.com/faidrogo4/DeskBuddy">DeskBuddy</a>.</p>
 
 > Status: Muya is still under active development. APIs may change between minor versions and it is not yet recommended for production use.
 
@@ -222,21 +222,21 @@ Vite produces three formats (`lib/es/index.js`, `lib/umd/index.js`, `lib/cjs/ind
 
 ## Publishing
 
-`@muyajs/core` is not published from this repository; marktext consumes it in-workspace through the source `exports` map. Release management lives in the upstream muya repository: <https://github.com/marktext/muya>.
+`@muyajs/core` is not published from this repository; deskbuddy consumes it in-workspace through the source `exports` map. Release management lives in the upstream muya repository: <https://github.com/marktext/muya>.
 
 ## FAQ
 
-**What is the relationship between MarkText and Muya?**
+**What is the relationship between DeskBuddy and Muya?**
 
-Muya is derived from MarkText. The team's goal is for Muya to live outside the desktop app so it can power web editors as well; the Electron-specific assumptions have been progressively peeled away.
+Muya is derived from DeskBuddy. The team's goal is for Muya to live outside the desktop app so it can power web editors as well; the Electron-specific assumptions have been progressively peeled away.
 
-**Does the Muya version track MarkText's version?**
+**Does the Muya version track DeskBuddy's version?**
 
 No, the two version numbers are independent.
 
 ## Built with Muya
 
-- [MarkText](https://github.com/marktext/marktext) — next-generation Markdown editor for macOS, Windows, and Linux.
+- [DeskBuddy](https://github.com/faidrogo4/DeskBuddy) — next-generation Markdown editor for macOS, Windows, and Linux.
 - [MindBox](https://www.mindbox.cc/) — note-taking app with first-class Markdown support.
 
 ## License

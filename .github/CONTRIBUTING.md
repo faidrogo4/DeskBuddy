@@ -1,12 +1,12 @@
-# MarkText Contributing Guide
+# DeskBuddy Contributing Guide
 
-Thank you very much for your interest in contributing to MarkText. Before submitting your contribution, please take a moment to read the following guidelines.
+Thank you very much for your interest in contributing to DeskBuddy. Before submitting your contribution, please take a moment to read the following guidelines.
 
 ## Philosophy
 
 Our philosophy is to keep things clean, clear, and minimal.
 
-MarkText is constantly evolving, and we want these improvements to stay aligned with this philosophy. For example, the sidebar and tabs provide useful functionality without distracting users, while keeping the default interface clean and minimal. In the future, we hope to expand MarkText's capabilities through a plugin system.
+DeskBuddy is constantly evolving, and we want these improvements to stay aligned with this philosophy. For example, the sidebar and tabs provide useful functionality without distracting users, while keeping the default interface clean and minimal. In the future, we hope to expand DeskBuddy's capabilities through a plugin system.
 
 ## The One Rule
 
@@ -14,7 +14,7 @@ MarkText is constantly evolving, and we want these improvements to stay aligned 
 
 Using AI to write code is fine. Submitting AI-generated code that you do not understand is not.
 
-If you use an agent, run it from the MarkText root directory so that it can automatically pick up `AGENTS.md`. Your agent must follow the rules and guidelines in that file.
+If you use an agent, run it from the DeskBuddy root directory so that it can automatically pick up `AGENTS.md`. Your agent must follow the rules and guidelines in that file.
 
 ## Issue and PR Guidelines
 
@@ -38,7 +38,7 @@ When submitting a PR, please keep the following in mind:
 If you are adding a new feature:
 
 - Open a feature request Issue first.
-- Explain why you want to add the feature, and confirm the final solution with MarkText members before submitting a PR.
+- Explain why you want to add the feature, and confirm the final solution with DeskBuddy members before submitting a PR.
 
 If you are fixing a bug:
 
@@ -47,19 +47,19 @@ If you are fixing a bug:
 
 ## Where Should I Start?
 
-A good way to get started is to look for Issues labeled `bug`, `help wanted`, or `feature request` in the [Issue tracker](https://github.com/marktext/marktext/issues). Issues labeled `good first issue` are especially suitable for newcomers.
+A good way to get started is to look for Issues labeled `bug`, `help wanted`, or `feature request` in the [Issue tracker](https://github.com/faidrogo4/DeskBuddy/issues). Issues labeled `good first issue` are especially suitable for newcomers.
 
-For larger Issues, please discuss the proposed solution first. Once the final solution has been approved by MarkText members, you can submit or start working on a PR. For smaller changes, you can open a PR directly.
+For larger Issues, please discuss the proposed solution first. Once the final solution has been approved by DeskBuddy members, you can submit or start working on a PR. For smaller changes, you can open a PR directly.
 
-There are also other ways you can help MarkText:
+There are also other ways you can help DeskBuddy:
 
 - Improve the documentation
-- Translate MarkText (currently unavailable)
+- Translate DeskBuddy (currently unavailable)
 - Design icons and logos
 - Improve the UI
-- Write tests for MarkText
-- Share your thoughts! We want to hear about features you think MarkText is missing, bugs you find, and why you ❤️ MarkText.
+- Write tests for DeskBuddy
+- Share your thoughts! We want to hear about features you think DeskBuddy is missing, bugs you find, and why you ❤️ DeskBuddy.
 
 ## Developer Documentation
 
-For more details, please [visit the developer documentation](https://marktext.me/docs/dev/overview).
+For more details, please [visit the developer documentation](https://github.com/faidrogo4/DeskBuddy/blob/develop/packages/website/content/docs/dev/README.md).

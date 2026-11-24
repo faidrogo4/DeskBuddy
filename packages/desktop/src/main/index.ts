@@ -16,8 +16,8 @@ import { registerSandboxIpcHandlers } from './ipc'
 import { setPlantumlServerSource } from './ipc/diagram'
 
 // Set version strings into global and process.versions
-process.env.MARKTEXT_VERSION = MARKTEXT_VERSION
-process.env.MARKTEXT_VERSION_STRING = MARKTEXT_VERSION_STRING
+process.env.DESKBUDDY_VERSION = DESKBUDDY_VERSION
+process.env.DESKBUDDY_VERSION_STRING = DESKBUDDY_VERSION_STRING
 
 // -----------------------------------------------
 // Exception handling and logging setup
@@ -54,7 +54,7 @@ initializeLogger(appEnvironment)
 // Handles native level crashes
 crashReporter.start({
   companyName: '',
-  productName: 'MarkText',
+  productName: 'DeskBuddy',
   uploadToServer: false, // collect locally
   compress: true
 })
@@ -86,7 +86,7 @@ if (!process.mas && !import.meta.env.DEV) {
 registerSandboxIpcHandlers()
 
 // Windows-specific AppUserModelID
-electronApp.setAppUserModelId('com.electron.marktext')
+electronApp.setAppUserModelId('com.electron.deskbuddy')
 
 // Dev shortcuts and reload suppression
 app.on('browser-window-created', (_, window) => {
@@ -104,8 +104,8 @@ try {
     : ''
   log.error(t('error.initializationFailed', { hint: msgHint }), errorObj)
 
-  const EXIT_ON_ERROR = !!process.env.MARKTEXT_EXIT_ON_ERROR
-  const SHOW_ERROR_DIALOG = !process.env.MARKTEXT_ERROR_INTERACTION
+  const EXIT_ON_ERROR = !!process.env.DESKBUDDY_EXIT_ON_ERROR
+  const SHOW_ERROR_DIALOG = !process.env.DESKBUDDY_ERROR_INTERACTION
   if (!EXIT_ON_ERROR && SHOW_ERROR_DIALOG) {
     dialog.showErrorBox(
       t('error.startupError'),

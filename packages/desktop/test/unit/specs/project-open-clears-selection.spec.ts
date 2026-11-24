@@ -18,7 +18,7 @@ vi.hoisted(() => {
 
   const w = globalThis as unknown as {
     window?: {
-      marktext?: { env?: { windowId?: number } }
+      deskbuddy?: { env?: { windowId?: number } }
       path?: {
         sep: string
         normalize: (p: string) => string
@@ -32,7 +32,7 @@ vi.hoisted(() => {
     }
   }
   w.window ??= {}
-  w.window.marktext ??= { env: { windowId: 1 } }
+  w.window.deskbuddy ??= { env: { windowId: 1 } }
   w.window.path ??= {
     sep: '/',
     normalize: (p) => p,

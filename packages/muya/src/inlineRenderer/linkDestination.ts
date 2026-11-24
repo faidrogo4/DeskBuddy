@@ -3,7 +3,7 @@
 // forms of destination disagree about the space — a bare destination ends at
 // the first one, and only a pointy-bracket destination may contain one — so a
 // parser that ignores the grammar gets `[link](/my uri)` and
-// `[link](</my uri>)` exactly backwards (marktext#2377).
+// `[link](</my uri>)` exactly backwards (deskbuddy#2377).
 
 // The characters a backslash may escape: CommonMark only recognizes an escape
 // before ASCII punctuation, so `my\ file` keeps its backslash *and* still ends

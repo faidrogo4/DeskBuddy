@@ -157,8 +157,8 @@ const setupDragDropHandler = (): void => {
   )
 }
 onMounted(async () => {
-  if (window.marktext?.initialState) {
-    preferencesStore.SET_USER_PREFERENCE(window.marktext.initialState)
+  if (window.deskbuddy?.initialState) {
+    preferencesStore.SET_USER_PREFERENCE(window.deskbuddy.initialState)
   }
 
   mainStore.LISTEN_WIN_STATUS()
@@ -208,7 +208,7 @@ onMounted(async () => {
     // `initialState` from bootstrap carries nullable URL params (string|null);
     // `addStyles` requires non-null `theme` / `codeFontFamily` strings.
     // Coalesce against DEFAULT_STYLE for every nullable field.
-    const init = window.marktext?.initialState
+    const init = window.deskbuddy?.initialState
     const style: AddStylesOptions = {
       theme: init?.theme ?? DEFAULT_STYLE.theme,
       codeFontFamily: init?.codeFontFamily ?? DEFAULT_STYLE.codeFontFamily,

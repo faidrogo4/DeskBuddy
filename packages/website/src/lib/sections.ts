@@ -3,7 +3,6 @@ export const SECTIONS = {
   preview: 'preview',
   extensions: 'extensions',
   themes: 'themes',
-  support: 'support',
   download: 'download'
 } as const
 
@@ -18,5 +17,5 @@ export function revealClass(delay?: RevealDelay, extra?: string): string {
   return delay ? `${base} ${delay}` : base
 }
 
-export const THEME_STORAGE_KEY = 'marktext-theme'
+export const THEME_STORAGE_KEY = 'deskbuddy-theme'
 export const DEFAULT_THEME = 'dark'

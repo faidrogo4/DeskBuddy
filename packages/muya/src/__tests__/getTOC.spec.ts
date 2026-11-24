@@ -3,12 +3,12 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { Muya } from '../muya';
 
-// Regression coverage for PR-15: re-introduces marktext's TOC API as a
-// public muya method (`muya.getTOC()`). Mirrors marktext's `tocCtrl.js`
+// Regression coverage for PR-15: re-introduces deskbuddy's TOC API as a
+// public muya method (`muya.getTOC()`). Mirrors deskbuddy's `tocCtrl.js`
 // behaviour and the 9cb2cbe8 regex fix (`/^\s*#{1,6}\s{1,}/` to handle
 // non-breaking spaces and tab-prefixed atx markers).
 //
-//  - Only top-level heading blocks are surfaced (matches marktext
+//  - Only top-level heading blocks are surfaced (matches deskbuddy
 //    iterating `this.blocks`).
 //  - Heading text is the rendered plain text: inline markdown markers,
 //    link/image URLs and tags are stripped to what a reader sees (#4811),
@@ -16,7 +16,7 @@ import { Muya } from '../muya';
 //    the anchor id the HTML export injects from `heading.textContent`.
 //  - Slug is a stable per-block identifier (so `getTOC()` returns the
 //    same slug across multiple invocations on the same document); duplicate
-//    headings keep distinct slugs but share `githubSlug`. The marktext
+//    headings keep distinct slugs but share `githubSlug`. The deskbuddy
 //    fix didn't dedupe and we don't either — that is the caller's call.
 //  - `generateGithubSlug` keeps Unicode letters, marks and numbers the way
 //    GitHub does, so `[jump](#中文标题)` resolves (#5292); emoji and
@@ -197,7 +197,7 @@ describe('muya.getTOC()', () => {
     });
 
     it('strips the leading hash run robustly (9cb2cbe8 \\s regex fix)', () => {
-        // Pre-9cb2cbe8 marktext used `/^ *#{1,6} {1,}/` (plain ASCII
+        // Pre-9cb2cbe8 deskbuddy used `/^ *#{1,6} {1,}/` (plain ASCII
         // space). After the fix it accepts any whitespace before the
         // markers and between markers and text, so headings authored with
         // tabs / NBSPs / other unicode whitespace strip cleanly.

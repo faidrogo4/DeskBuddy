@@ -29,8 +29,8 @@ function generate(
     }).generate(markdown) as unknown as IStateLike[];
 }
 
-// Defensive regression test for marktext commit 23435ce6 (#1733 / PR #1835).
-// In the legacy marked fork that marktext shipped, the list tokenizer forgot
+// Defensive regression test for deskbuddy commit 23435ce6 (#1733 / PR #1835).
+// In the legacy marked fork that deskbuddy shipped, the list tokenizer forgot
 // to subtract the four-character `[x] ` checkbox prefix from the indentation
 // counter — so a `- [ ] task1_1` two levels deep was read as a sibling of
 // `- [ ] task1`. The new muya drives lists through marked v16's built-in
@@ -38,7 +38,7 @@ function generate(
 // bullet vs task), which doesn't share that codepath. These specs lock in
 // the correct nesting so a future list refactor can't quietly re-introduce
 // the flattening.
-describe('markdownToState — task list nesting (marktext 23435ce6)', () => {
+describe('markdownToState — task list nesting (deskbuddy 23435ce6)', () => {
     it('keeps an empty unchecked task item after a populated task item', () => {
         const states = generate('- [ ] a\n- [ ] \n');
 
@@ -163,7 +163,7 @@ describe('markdownToState — task list nesting (marktext 23435ce6)', () => {
         expect(level3.children!.find(c => c.name === 'paragraph')?.text).toBe('task1_1_1');
     });
 
-    // Defensive regression for marktext commit dec7502e (PR #741):
+    // Defensive regression for deskbuddy commit dec7502e (PR #741):
     // setext headings (`text\n===` / `text\n---`) must round-trip with a
     // distinct `setext-heading` state name (atx-heading and setext-heading
     // are separate block types in the new muya).
@@ -193,7 +193,7 @@ describe('markdownToState — task list nesting (marktext 23435ce6)', () => {
         expect(states[0].meta!.level).toBe(1);
     });
 
-    it('starts a new list when the bullet marker changes (CommonMark 264, marktext 270d33f6)', () => {
+    it('starts a new list when the bullet marker changes (CommonMark 264, deskbuddy 270d33f6)', () => {
         // Different bullet markers must produce separate lists.
         const states = generate(`- foo
 - bar
@@ -206,7 +206,7 @@ describe('markdownToState — task list nesting (marktext 23435ce6)', () => {
         expect(states[1].children!.length).toBe(1);
     });
 
-    it('starts a new list when the ordered delimiter changes (CommonMark 265, marktext 270d33f6)', () => {
+    it('starts a new list when the ordered delimiter changes (CommonMark 265, deskbuddy 270d33f6)', () => {
         // `.` vs `)` are different ordered-list delimiters: separate lists.
         const states = generate(`1. foo
 2. bar
@@ -219,8 +219,8 @@ describe('markdownToState — task list nesting (marktext 23435ce6)', () => {
         expect(states[1].children!.length).toBe(1);
     });
 
-    it('does not parse `-foo` (no space) as a list item (marktext 70d49c30)', () => {
-        // marktext #832 issuecomment-477719256: `-foo` with no space between
+    it('does not parse `-foo` (no space) as a list item (deskbuddy 70d49c30)', () => {
+        // deskbuddy #832 issuecomment-477719256: `-foo` with no space between
         // the dash and the word was wrongly captured as a list item. A
         // bullet marker must be followed by a space (or newline) to start
         // a list. The new muya uses marked v16's built-in list rule which
@@ -239,8 +239,8 @@ describe('markdownToState — task list nesting (marktext 23435ce6)', () => {
         expect(states[0].children![0].name).toBe('list-item');
     });
 
-    it('splits a mixed task + bullet sequence into two lists (marktext 372fe02f)', () => {
-        // marktext #870: writing
+    it('splits a mixed task + bullet sequence into two lists (deskbuddy 372fe02f)', () => {
+        // deskbuddy #870: writing
         //   - [x] foo
         //   - [x] bar
         //   - zar

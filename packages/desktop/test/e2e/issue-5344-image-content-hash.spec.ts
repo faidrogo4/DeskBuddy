@@ -60,7 +60,7 @@ test.describe('Copy image to the relative assets folder', () => {
     app = launched.app
     page = launched.page
     docDir = path.dirname(launched.filePath)
-    sourceDir = fs.mkdtempSync(path.join(os.tmpdir(), 'marktext-e2e-image-src-'))
+    sourceDir = fs.mkdtempSync(path.join(os.tmpdir(), 'deskbuddy-e2e-image-src-'))
     await page.evaluate((payload) => {
       window.electron.ipcRenderer.send('mt::set-user-preference', payload)
     }, { imageInsertAction: 'folder', imagePreferRelativeDirectory: true })

@@ -1,4 +1,4 @@
-// __MARKTEXT_ONLY__
+// __DESKBUDDY_ONLY__
 import { deepClone } from '../utils'
 
 // Source: https://github.com/Microsoft/vscode/blob/master/src/vs/editor/common/model/wordHelper.ts

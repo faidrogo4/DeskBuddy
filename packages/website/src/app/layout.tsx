@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
   display: 'swap'
 })
 
-const SITE_URL = 'https://marktext.me'
-const TITLE = 'MarkText — The Markdown editor that gets out of your way'
+const SITE_URL = 'https://deskbuddy.example.com'
+const TITLE = 'DeskBuddy — The Markdown editor that gets out of your way'
 const DESCRIPTION =
   'A free, open-source, real-time preview Markdown editor for macOS, Windows and Linux. Beautiful typography, 33 built-in themes, math, diagrams, footnotes — all rendered live.'
 
@@ -24,10 +24,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: TITLE,
-    template: '%s | MarkText'
+    template: '%s | DeskBuddy'
   },
   description: DESCRIPTION,
-  applicationName: 'MarkText',
+  applicationName: 'DeskBuddy',
   keywords: [
     'markdown editor',
     'WYSIWYG markdown',
@@ -50,14 +50,14 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: SITE_URL,
-    siteName: 'MarkText',
+    siteName: 'DeskBuddy',
     title: TITLE,
     description: DESCRIPTION,
-    images: [{ url: '/favicon.png', width: 512, height: 512, alt: 'MarkText logo' }]
+    images: [{ url: '/favicon.png', width: 512, height: 512, alt: 'DeskBuddy logo' }]
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@marktextapp',
+    site: '@deskbuddyapp',
     title: TITLE,
     description: DESCRIPTION,
     images: ['/favicon.png']
@@ -73,15 +73,15 @@ export const viewport: Viewport = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'MarkText',
+  name: 'DeskBuddy',
   applicationCategory: 'DeveloperApplication',
   operatingSystem: 'macOS, Windows, Linux',
   description: DESCRIPTION,
   url: SITE_URL,
-  license: 'https://github.com/marktext/marktext/blob/develop/LICENSE',
+  license: 'https://github.com/faidrogo4/DeskBuddy/blob/develop/LICENSE',
   author: { '@type': 'Person', name: 'Ran Luo', url: 'https://github.com/Jocs' },
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-  downloadUrl: 'https://github.com/marktext/marktext/releases/latest',
+  downloadUrl: 'https://github.com/faidrogo4/DeskBuddy/releases/latest',
   softwareVersion: 'latest'
 }
 

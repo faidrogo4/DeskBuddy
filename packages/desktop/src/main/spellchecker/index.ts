@@ -65,7 +65,7 @@ export const addToDictionary = (win: BrowserWindow, word: string): boolean => {
 }
 
 /**
- * Stop flagging `word` until MarkText quits, without saving it to the
+ * Stop flagging `word` until DeskBuddy quits, without saving it to the
  * dictionary.
  */
 export const ignoreWord = (word: string): boolean => {

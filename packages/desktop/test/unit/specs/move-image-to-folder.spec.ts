@@ -128,7 +128,7 @@ describe('moveImageToFolder relative-directory persistence', () => {
   describe('image already in outputDir under different casing', () => {
     // A dropped file carries its on-disk casing, while outputDir carries the
     // casing of the preference and of the path the document was opened with.
-    const dir = path.join(os.tmpdir(), 'marktext-case-test')
+    const dir = path.join(os.tmpdir(), 'deskbuddy-case-test')
     const doc = path.join(dir, 'a.md')
     const out = path.join(dir, 'assets')
     const inPlace = path.join(out.toUpperCase(), 'Already.PNG')

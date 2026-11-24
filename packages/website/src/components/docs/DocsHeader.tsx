@@ -22,8 +22,8 @@ export default function DocsHeader({ onSearchOpen }: Props) {
     <header className="dochdr">
       <div className="dochdr-in">
         <Link className="brand" href="/">
-          <img className="mark" src="/assets/logo.png" alt="MarkText logo" />
-          <span>MarkText</span>
+          <img className="mark" src="/assets/logo.png" alt="DeskBuddy logo" />
+          <span>DeskBuddy</span>
           <span className="divider" aria-hidden />
           <span className="sub">Docs</span>
         </Link>

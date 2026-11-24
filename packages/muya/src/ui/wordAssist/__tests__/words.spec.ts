@@ -111,8 +111,8 @@ describe('rankCompletions', () => {
     });
 
     it('keeps deliberate mixed case', () => {
-        const doc = new Map([['MarkText', 4]]);
-        expect(rankCompletions('mar', doc, [], 5)).toEqual(['MarkText']);
+        const doc = new Map([['DeskBuddy', 4]]);
+        expect(rankCompletions('des', doc, [], 5)).toEqual(['DeskBuddy']);
     });
 
     it('respects the limit', () => {

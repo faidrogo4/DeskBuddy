@@ -488,7 +488,7 @@ watch(focus, (value) => {
 // items) rather than blanket-enabling everything (#3531).
 watch(sourceCode, (isSource) => {
   if (!isActive.value) return
-  const windowId = window.marktext?.env?.windowId ?? -1
+  const windowId = window.deskbuddy?.env?.windowId ?? -1
   if (isSource) {
     window.electron.ipcRenderer.send('mt::set-editor-format-menus-enabled', windowId, false)
     return

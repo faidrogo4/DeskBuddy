@@ -97,7 +97,7 @@ test.describe('sequence diagram arrowheads survive PDF export (#2423)', () => {
 
   test('every url(#…) reference in the print container resolves inside it', async() => {
     test.setTimeout(120000)
-    const target = `/tmp/marktext-e2e-2423-${Date.now()}.pdf`
+    const target = `/tmp/deskbuddy-e2e-2423-${Date.now()}.pdf`
     fs.rmSync(target, { force: true })
 
     await installReferenceProbe(page)

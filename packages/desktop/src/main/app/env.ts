@@ -74,7 +74,7 @@ const setupEnvironment = (args: Record<string, unknown>): AppEnvironment => {
   // Development mode is decided when the app is built (#5407); a NODE_ENV in
   // the user's environment used to turn every release into a debug run.
   const isDevMode = import.meta.env.DEV
-  const debug = !!args['--debug'] || !!process.env.MARKTEXT_DEBUG || import.meta.env.DEV
+  const debug = !!args['--debug'] || !!process.env.DESKBUDDY_DEBUG || import.meta.env.DEV
   const verbose = (args['--verbose'] as number | undefined) || 0
   const safeMode = !!args['--safe']
   const userDataPath = args['--user-data-dir'] as string | undefined // or undefined (= default user data path)
@@ -93,13 +93,13 @@ const setupEnvironment = (args: Record<string, unknown>): AppEnvironment => {
 
   // Keep this for easier access.
   const mutableGlobal = global as unknown as {
-    MARKTEXT_DEBUG: boolean
-    MARKTEXT_DEBUG_VERBOSE: number
-    MARKTEXT_SAFE_MODE: boolean
+    DESKBUDDY_DEBUG: boolean
+    DESKBUDDY_DEBUG_VERBOSE: number
+    DESKBUDDY_SAFE_MODE: boolean
   }
-  mutableGlobal.MARKTEXT_DEBUG = debug
-  mutableGlobal.MARKTEXT_DEBUG_VERBOSE = verbose
-  mutableGlobal.MARKTEXT_SAFE_MODE = safeMode
+  mutableGlobal.DESKBUDDY_DEBUG = debug
+  mutableGlobal.DESKBUDDY_DEBUG_VERBOSE = verbose
+  mutableGlobal.DESKBUDDY_SAFE_MODE = safeMode
 
   return appEnvironment
 }

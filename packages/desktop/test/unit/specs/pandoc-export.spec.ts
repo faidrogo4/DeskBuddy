@@ -95,12 +95,12 @@ describe('pandoc export', () => {
   beforeEach(() => {
     // A real executable, so resolution stops at the override. child_process is
     // mocked here, and a fall-through to the login shell would hang on it.
-    process.env.MARKTEXT_PANDOC = process.execPath
+    process.env.DESKBUDDY_PANDOC = process.execPath
   })
 
   afterEach(() => {
     spawnMock.mockReset()
-    delete process.env.MARKTEXT_PANDOC
+    delete process.env.DESKBUDDY_PANDOC
   })
 
   // The formats of #2103/#3917 minus OPML, whose writer puts the document in one attribute.

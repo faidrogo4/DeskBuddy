@@ -6,7 +6,7 @@ import * as path from 'node:path'
 import { launchWithMarkdown, sendIpcToRenderer, waitForEditor, waitForMenuReady } from './helpers'
 
 // #5076: footnote definitions written one per line — the shape pandoc and
-// GFM both emit, and what a .md drafted outside MarkText normally looks
+// GFM both emit, and what a .md drafted outside DeskBuddy normally looks
 // like — used to nest inside their predecessor instead of standing as
 // siblings. Only the first definition became a footnote; the rest were
 // swallowed into its body, and saving re-indented them by four spaces per
@@ -23,7 +23,7 @@ const PROBE_DOC = 'probe[^a]\n\n[^a]: probe definition\n'
 const DOC = 'Body a[^1] b[^2] c[^3].\n\n[^1]: one\n[^2]: two\n[^3]: three\n'
 
 const writeDoc = (content: string): string => {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'marktext-e2e-5076-'))
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'deskbuddy-e2e-5076-'))
   const filePath = path.join(dir, 'adjacent-footnotes.md')
   fs.writeFileSync(filePath, content, 'utf-8')
   return filePath

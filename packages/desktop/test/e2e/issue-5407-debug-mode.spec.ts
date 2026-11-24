@@ -20,12 +20,12 @@ const readDebugState = (app: ElectronApplication): Promise<DebugState> =>
     ))
     if (!view?.submenu) throw new Error('View menu was not found')
     return {
-      debug: !!(global as typeof global & { MARKTEXT_DEBUG?: boolean }).MARKTEXT_DEBUG,
+      debug: !!(global as typeof global & { DESKBUDDY_DEBUG?: boolean }).DESKBUDDY_DEBUG,
       viewItemCount: view.submenu.items.length
     }
   })
 
-// Debug mode is turned on with MARKTEXT_DEBUG here rather than `--debug`,
+// Debug mode is turned on with DESKBUDDY_DEBUG here rather than `--debug`,
 // which Node's CLI parser claims before the app sees it (#5409).
 test('a built app offers no developer tools unless debug mode is turned on', async() => {
   const plain = await launchElectron()
@@ -38,7 +38,7 @@ test('a built app offers no developer tools unless debug mode is turned on', asy
   }
   expect(plainState.debug).toBe(false)
 
-  const debugRun = await launchElectron([], { env: { MARKTEXT_DEBUG: '1' } })
+  const debugRun = await launchElectron([], { env: { DESKBUDDY_DEBUG: '1' } })
   let debugState: DebugState
   try {
     await waitForMenuReady(debugRun.app)

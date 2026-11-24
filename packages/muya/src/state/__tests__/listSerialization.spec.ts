@@ -12,7 +12,7 @@ import ExportMarkdown from '../stateToMarkdown';
 
 // Round-trip helper: parse markdown to state, then serialise back.
 // Lets us verify that `listIndentation` produces stable output the same
-// way marktext's old `markdown-list-indentation.spec.js` did.
+// way deskbuddy's old `markdown-list-indentation.spec.js` did.
 function roundTrip(md: string, listIndentation: number | string = 1): string {
     const states = new MarkdownToState({
         footnote: false,
@@ -206,16 +206,16 @@ describe('stateToMarkdown — nested empty list items', () => {
     });
 });
 
-// Regression baseline ported from marktext's
+// Regression baseline ported from deskbuddy's
 // test/unit/specs/markdown-list-indentation.spec.js, the suite touched by
-// commit 02841ffd (fix: subsequent list paragraphs, PR #916). marktext used
+// commit 02841ffd (fix: subsequent list paragraphs, PR #916). deskbuddy used
 // these four fixtures to lock down the indentation produced by the
 // `listIndentation = 1|2|3|4` option once the bug was fixed. The new muya's
 // stateToMarkdown.ts already implements the split between "subsequent
 // paragraph indent" (marker width) and "nested list indent" (configurable),
 // so this round-trips the same fixtures end-to-end.
-describe('stateToMarkdown — list indentation round-trip (marktext 02841ffd)', () => {
-    it('indent by 1 space — round-trips marktext fixture', () => {
+describe('stateToMarkdown — list indentation round-trip (deskbuddy 02841ffd)', () => {
+    it('indent by 1 space — round-trips deskbuddy fixture', () => {
         const md = `start
 
 - foo
@@ -244,7 +244,7 @@ sep
         expect(roundTrip(md, 1)).toBe(md);
     });
 
-    it('indent by 2 spaces — round-trips marktext fixture', () => {
+    it('indent by 2 spaces — round-trips deskbuddy fixture', () => {
         const md = `start
 
 - foo
@@ -273,7 +273,7 @@ sep
         expect(roundTrip(md, 2)).toBe(md);
     });
 
-    it('indent by 3 spaces — round-trips marktext fixture', () => {
+    it('indent by 3 spaces — round-trips deskbuddy fixture', () => {
         const md = `start
 
 - foo
@@ -302,12 +302,12 @@ sep
         expect(roundTrip(md, 3)).toBe(md);
     });
 
-    // Regression baseline for marktext commit 5f191681 (PR #840):
+    // Regression baseline for deskbuddy commit 5f191681 (PR #840):
     // ordered or bullet lists nested inside a blockquote used to serialise
     // with the wrong leading whitespace. The fixtures below come straight
-    // from `test/unit/data/common/Blockquotes.md` in the marktext repo at
+    // from `test/unit/data/common/Blockquotes.md` in the deskbuddy repo at
     // that commit.
-    it('round-trips an ordered list nested inside a blockquote (marktext 5f191681)', () => {
+    it('round-trips an ordered list nested inside a blockquote (deskbuddy 5f191681)', () => {
         const md = `> 1. Lorem Ipsum is simply dummy text 1
 > 2. Lorem Ipsum is simply dummy text 2
 > 3. Lorem Ipsum is simply dummy text 3
@@ -315,7 +315,7 @@ sep
         expect(roundTrip(md, 1)).toBe(md);
     });
 
-    it('round-trips a bullet list nested inside a blockquote (marktext 5f191681)', () => {
+    it('round-trips a bullet list nested inside a blockquote (deskbuddy 5f191681)', () => {
         const md = `> - one
 > - two
 > - three
@@ -323,7 +323,7 @@ sep
         expect(roundTrip(md, 1)).toBe(md);
     });
 
-    it('round-trips a blockquote nested inside a list item (marktext 5f191681)', () => {
+    it('round-trips a blockquote nested inside a list item (deskbuddy 5f191681)', () => {
         const md = `- foo
 - > bar
 - baz
@@ -331,13 +331,13 @@ sep
         expect(roundTrip(md, 1)).toBe(md);
     });
 
-    // Beyond the marktext fixtures: lock in a few subsequent-paragraph and
+    // Beyond the deskbuddy fixtures: lock in a few subsequent-paragraph and
     // mixed-content scenarios that exercise the same indent / listIndent
-    // split the marktext 02841ffd fix introduced.
+    // split the deskbuddy 02841ffd fix introduced.
     //
     // These also surface a separate latent bug in `insertLineBreak`: blank
     // lines inside a list item were carrying the item's indent as trailing
-    // whitespace (`"  \n"` instead of `"\n"`). Marktext shipped the same
+    // whitespace (`"  \n"` instead of `"\n"`). DeskBuddy shipped the same
     // bug, but it's serialization-correctness — fix it as part of the
     // stateToMarkdown baseline.
     it('round-trips a loose list with a subsequent paragraph', () => {
@@ -379,7 +379,7 @@ sep
     });
 
     it('round-trips an ordered list with two-digit item numbers', () => {
-        // CommonMark allows up to 9 digits, but marktext's 02841ffd capped
+        // CommonMark allows up to 9 digits, but deskbuddy's 02841ffd capped
         // dfm at 99 to avoid runaway indentation. We only assert behavior
         // up to typical document scale here.
         const md = `1. one
@@ -396,7 +396,7 @@ sep
         expect(roundTrip(md, 1)).toBe(md);
     });
 
-    it('indent by 4 spaces — round-trips marktext fixture', () => {
+    it('indent by 4 spaces — round-trips deskbuddy fixture', () => {
         const md = `start
 
 - foo
@@ -426,9 +426,9 @@ sep
     });
 
     // Daring Fireball Markdown Spec: nested list items indent by a hard
-    // 4 spaces regardless of marker width. Backported from marktext
+    // 4 spaces regardless of marker width. Backported from deskbuddy
     // `markdown-list-indentation.spec.js`, last case in the suite.
-    it('indent using Daring Fireball Markdown Spec (dfm) — round-trips marktext fixture', () => {
+    it('indent using Daring Fireball Markdown Spec (dfm) — round-trips deskbuddy fixture', () => {
         const md = `start
 
 - foo

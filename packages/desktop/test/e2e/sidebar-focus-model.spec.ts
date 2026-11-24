@@ -22,7 +22,7 @@ test.describe('Sidebar tree focus scope', () => {
   let projectDir: string
 
   test.beforeAll(async() => {
-    projectDir = fs.mkdtempSync(path.join(os.tmpdir(), 'marktext-focus-'))
+    projectDir = fs.mkdtempSync(path.join(os.tmpdir(), 'deskbuddy-focus-'))
     fs.writeFileSync(path.join(projectDir, 'alpha.md'), '# Alpha\n', 'utf-8')
     fs.writeFileSync(path.join(projectDir, 'beta.md'), '# Beta\n', 'utf-8')
     fs.writeFileSync(path.join(projectDir, 'gamma.md'), '# Gamma\n', 'utf-8')

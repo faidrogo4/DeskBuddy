@@ -177,19 +177,19 @@ Autolink: <https://commonmark.org>.
 
 Raw URL autolink (GFM extension): https://github.com/marktext/muya.
 
-HTML anchor: <a href="https://github.com/marktext/muya">marktext/muya on GitHub</a>.
+HTML anchor: <a href="https://github.com/marktext/muya">muya on GitHub</a>.
 
 Reference link: [Wikipedia][wiki] and shorthand [example].
 
-Reference image: ![marktext logo small][img].
+Reference image: ![deskbuddy logo small][img].
 
 Inline image:
 
-![marktext logo](https://raw.githubusercontent.com/marktext/marktext/develop/static/icon.png "marktext icon")
+![deskbuddy logo](https://raw.githubusercontent.com/faidrogo4/DeskBuddy/develop/static/icon.png "deskbuddy icon")
 
 [wiki]: https://en.wikipedia.org "Wikipedia"
 [example]: https://example.com "Example"
-[img]: https://raw.githubusercontent.com/marktext/marktext/develop/static/logo-96px.png "marktext logo 96px"
+[img]: https://raw.githubusercontent.com/faidrogo4/DeskBuddy/develop/static/logo-96px.png "deskbuddy logo 96px"
 
 # 5. Inline HTML
 

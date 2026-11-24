@@ -15,7 +15,7 @@ test.describe('Sidebar name input commits on click-away (#3207)', () => {
   let projectDir: string
 
   test.beforeAll(async() => {
-    projectDir = fs.mkdtempSync(path.join(os.tmpdir(), 'marktext-3207-'))
+    projectDir = fs.mkdtempSync(path.join(os.tmpdir(), 'deskbuddy-3207-'))
     fs.writeFileSync(path.join(projectDir, 'first.md'), '# First\n', 'utf-8')
     fs.writeFileSync(path.join(projectDir, 'second.md'), '# Second\n', 'utf-8')
     fs.writeFileSync(path.join(projectDir, 'third.md'), '# Third\n', 'utf-8')

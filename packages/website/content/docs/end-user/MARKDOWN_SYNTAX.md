@@ -173,7 +173,7 @@ Which renders to:
 
 ## Highlight
 
-Some editors write highlighted text as `==text==`. MarkText reads this
+Some editors write highlighted text as `==text==`. DeskBuddy reads this
 non-standard syntax when **Preferences → Markdown → Highlight (==text==)** is
 enabled; it stays literal text otherwise, so documents are unaffected until you
 opt in. Both the editor and the HTML/PDF export render it as `<mark>`, the same
@@ -189,7 +189,7 @@ Renders to:
 
 ## Inline diff
 
-GitLab writes tracked additions and deletions with inline diff tags. MarkText
+GitLab writes tracked additions and deletions with inline diff tags. DeskBuddy
 reads this non-standard syntax when **Preferences → Markdown → Inline diff
 ({+ … +})** is enabled; it stays literal text otherwise, so documents are
 unaffected until you opt in. As in GitLab, additions get a green wash and
@@ -291,18 +291,18 @@ Note that placement of achors is arbitrary, you can put them anywhere you want, 
 Images have a similar syntax to links but include a preceding exclamation point.
 
 ```markdown
-![MarkText](https://raw.githubusercontent.com/marktext/marktext/develop/resources/icons/256x256/marktext.png)
+![DeskBuddy](https://raw.githubusercontent.com/faidrogo4/DeskBuddy/develop/resources/icons/256x256/deskbuddy.png)
 ```
 
-![MarkText](https://raw.githubusercontent.com/marktext/marktext/develop/resources/icons/256x256/marktext.png)
+![DeskBuddy](https://raw.githubusercontent.com/faidrogo4/DeskBuddy/develop/resources/icons/256x256/deskbuddy.png)
 
 or
 
 ```markdown
-![Alt text](hhttps://raw.githubusercontent.com/marktext/marktext/develop/resources/icons/256x256/marktext.png 'MarkText logo')
+![Alt text](hhttps://raw.githubusercontent.com/faidrogo4/DeskBuddy/develop/resources/icons/256x256/deskbuddy.png 'DeskBuddy logo')
 ```
 
-![Alt text](https://raw.githubusercontent.com/marktext/marktext/develop/resources/icons/256x256/marktext.png 'MarkText logo')
+![Alt text](https://raw.githubusercontent.com/faidrogo4/DeskBuddy/develop/resources/icons/256x256/deskbuddy.png 'DeskBuddy logo')
 
 Like links, Images also have a footnote style syntax
 
@@ -314,10 +314,10 @@ Like links, Images also have a footnote style syntax
 
 With a reference later in the document defining the URL location:
 
-[id]: https://raw.githubusercontent.com/marktext/marktext/develop/resources/icons/256x256/marktext.png 'MarkText logo'
+[id]: https://raw.githubusercontent.com/faidrogo4/DeskBuddy/develop/resources/icons/256x256/deskbuddy.png 'DeskBuddy logo'
 
 ```markdown
-[id]: https://raw.githubusercontent.com/marktext/marktext/develop/resources/icons/256x256/marktext.png 'MarkText logo'
+[id]: https://raw.githubusercontent.com/faidrogo4/DeskBuddy/develop/resources/icons/256x256/deskbuddy.png 'DeskBuddy logo'
 ```
 
 <br>
@@ -363,7 +363,7 @@ Renders to:
 ### Multiline blockquote
 
 GitLab fences a multi-line quote with `>>>` on its own line at both ends, so you
-do not have to prepend `>` to every line. MarkText reads this non-standard
+do not have to prepend `>` to every line. DeskBuddy reads this non-standard
 syntax when **Preferences → Markdown → Multiline blockquote (>>>)** is enabled;
 with the setting off the fence stays literal text, so a document keeps its `>>>`
 lines until you opt in. The quote renders like any other blockquote, and the
@@ -716,7 +716,7 @@ Which renders to:
 
 :heart: :zap: :cow: :dollar: :star: :tada:
 
-**NOTE:** MarkText provides an emoji picker with search functionality.
+**NOTE:** DeskBuddy provides an emoji picker with search functionality.
 
 <br>
 
@@ -804,7 +804,7 @@ $$
 ### TeX Delimiters
 
 Documents written for Pandoc, MathJax or KaTeX auto-render often delimit their
-formulas with backslashes instead of dollar signs. MarkText reads both
+formulas with backslashes instead of dollar signs. DeskBuddy reads both
 spellings, each behind its own switch under **Preferences → Markdown →
 Extensions**:
 
@@ -818,7 +818,7 @@ costs you the ability to escape `(` and `[`, so a line such as `- \[TODO\]`
 starts reading as a formula rather than as literal brackets — which is why you
 have to ask for it.
 
-A formula written this way is saved the way you wrote it: MarkText does not
+A formula written this way is saved the way you wrote it: DeskBuddy does not
 rewrite `\[…\]` into `$$…$$`, and the spacing inside the delimiters is left
 alone.
 
@@ -826,7 +826,7 @@ alone.
 
 ## Diagrams
 
-MarkText support class, flow chart, gantt and sequence diagrams powered by flowchart.js, mermaid and Vega-Lite. [Code](#code) blocks with special language identifiers are used for diagrams.
+DeskBuddy support class, flow chart, gantt and sequence diagrams powered by flowchart.js, mermaid and Vega-Lite. [Code](#code) blocks with special language identifiers are used for diagrams.
 
 Hover a rendered diagram to get its toolbar. The magnifier opens the diagram
 full-screen, scaled to fit the window so a large one arrives readable. From

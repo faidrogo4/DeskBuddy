@@ -15,8 +15,8 @@ import { t } from './i18n'
 type ErrorType = 'main' | 'renderer'
 type Logger = (s: string) => void
 
-const EXIT_ON_ERROR = !!process.env.MARKTEXT_EXIT_ON_ERROR
-const SHOW_ERROR_DIALOG = !process.env.MARKTEXT_ERROR_INTERACTION
+const EXIT_ON_ERROR = !!process.env.DESKBUDDY_EXIT_ON_ERROR
+const SHOW_ERROR_DIALOG = !process.env.DESKBUDDY_ERROR_INTERACTION
 const ERROR_MSG_MAIN = (): string => t('error.unexpectedMainProcess')
 const ERROR_MSG_RENDERER = (): string => t('error.unexpectedRendererProcess')
 
@@ -29,7 +29,7 @@ const getOSInformation = (): string => {
 const exceptionToString = (error: Error, type: ErrorType): string => {
   const { message, stack } = error
   return (
-    `Version: ${MARKTEXT_VERSION_STRING || app.getVersion()}\n` +
+    `Version: ${DESKBUDDY_VERSION_STRING || app.getVersion()}\n` +
     `OS: ${getOSInformation()}\n` +
     `Type: ${type}\n` +
     `Date: ${new Date().toUTCString()}\n` +
@@ -53,7 +53,7 @@ const handleError = async(title: string, error: Error, type: ErrorType): Promise
     return
   } else if (
     !SHOW_ERROR_DIALOG ||
-    ((global as unknown as { MARKTEXT_IS_STABLE?: boolean }).MARKTEXT_IS_STABLE &&
+    ((global as unknown as { DESKBUDDY_IS_STABLE?: boolean }).DESKBUDDY_IS_STABLE &&
       type === 'renderer')
   ) {
     return
@@ -101,7 +101,7 @@ const handleError = async(title: string, error: Error, type: ErrorType): Promise
       //
       // ### Version
       //
-      // MarkText: ${MARKTEXT_VERSION_STRING}
+      // DeskBuddy: ${DESKBUDDY_VERSION_STRING}
       // Operating system: ${getOSInformation()}`
       //   )
       //   break
@@ -135,8 +135,8 @@ const setupExceptionHandler = (): void => {
 
   // start crashReporter to save core dumps to temporary folder
   crashReporter.start({
-    companyName: 'MarkText',
-    productName: 'MarkText',
+    companyName: 'DeskBuddy',
+    productName: 'DeskBuddy',
     submitURL: 'http://0.0.0.0/',
     uploadToServer: false,
     compress: true

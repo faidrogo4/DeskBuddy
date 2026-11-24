@@ -4,11 +4,11 @@ This file provides guidance to AI agents when working with code in this reposito
 
 ## Project Overview
 
-MarkText is a WYSIWYG markdown editor built on Electron + Vue 3. It supports CommonMark, GitHub Flavored Markdown, math (KaTeX), Mermaid diagrams, PlantUML, and multiple editing modes (focus, typewriter, source-code).
+DeskBuddy is a WYSIWYG markdown editor built on Electron + Vue 3. It supports CommonMark, GitHub Flavored Markdown, math (KaTeX), Mermaid diagrams, PlantUML, and multiple editing modes (focus, typewriter, source-code).
 
 - **Version**: see `package.json`
 - **License**: MIT
-- **Repository**: <https://github.com/marktext/marktext>
+- **Repository**: <https://github.com/faidrogo4/DeskBuddy>
 
 ## Tech Stack
 
@@ -37,7 +37,7 @@ root holds only shared tooling and CI-facing scripts.
 <repo-root>/
   package.json              Workspace orchestrator — every CI-facing script
                             proxies to packages/desktop via `pnpm --filter
-                            marktext ...`. CI invocations are unchanged.
+                            deskbuddy ...`. CI invocations are unchanged.
   pnpm-workspace.yaml       `packages: ['packages/*']` plus allowBuilds.
   pnpm-lock.yaml            Single lockfile, shared across all packages.
   eslint.config.js          Root ESLint v9 flat config (covers desktop +
@@ -53,7 +53,7 @@ root holds only shared tooling and CI-facing scripts.
                             `directories.output: ../../dist` so CI artifact
                             globs `dist/*` still apply).
   packages/
-    desktop/                The Electron app (name: "marktext").
+    desktop/                The Electron app (name: "deskbuddy").
       package.json          Holds all Electron / Vue / build-time deps and
                             the dev/build/test/typecheck scripts. Depends on
                             @muyajs/core via workspace:*.
@@ -94,7 +94,7 @@ root holds only shared tooling and CI-facing scripts.
                             IPC contract (`shared/types/ipc.ts`).
         types/              Ambient .d.ts declarations.
     muyajs/                 Legacy markdown editor engine
-                            (name: "@marktext/muyajs"). Primarily JS + DOM,
+                            (name: "@deskbuddy/muyajs"). Primarily JS + DOM,
                             avoids Electron APIs. Exception:
                             packages/muyajs/lib/parser/render/plantuml.js
                             imports Node's `zlib`. Nothing imports it any
@@ -128,7 +128,7 @@ root holds only shared tooling and CI-facing scripts.
                             wired in playwright.config.ts but deferred
                             until BACKLOG Phase 3 lands engine-independent
                             specs.
-    website/                marktext-website (Vite + React 18). Standalone
+    website/                deskbuddy-website (Vite + React 18). Standalone
                             toolchain; depends on @muyajs/core from npm,
                             not on the local muyajs package. Not part of
                             desktop CI today.
@@ -140,7 +140,7 @@ The root has no `src/`, `test/`, `static/`, or `build/` of its own anymore — t
 ## Development Workflow
 
 All commands run from the repo root. The root `package.json` proxies every
-desktop-specific script to `packages/desktop` via `pnpm --filter marktext`,
+desktop-specific script to `packages/desktop` via `pnpm --filter deskbuddy`,
 so the names and behavior are unchanged from the pre-monorepo layout.
 
 ```bash
@@ -171,8 +171,8 @@ pnpm run perf:inspect       # attach when ready
 pnpm run perf:inspect-brk   # break on first line
 
 # Website (not yet wired into CI)
-pnpm --filter marktext-website dev      # Vite dev server
-pnpm --filter marktext-website build    # static build → packages/website/build/
+pnpm --filter deskbuddy-website dev      # Vite dev server
+pnpm --filter deskbuddy-website build    # static build → packages/website/build/
 ```
 
 If you need to invoke a script directly inside a package, use
@@ -264,7 +264,7 @@ See `packages/website/content/docs/dev/IPC.md` for conventions and examples.
 
 ## Further Reading
 
-`packages/website/content/docs/dev/` contains the deeper developer documentation referenced by this guide. Same files are published as the developer docs section on <https://marktext.me/docs/dev/overview>:
+`packages/website/content/docs/dev/` contains the deeper developer documentation referenced by this guide. Same files are published as the developer docs section on <https://github.com/faidrogo4/DeskBuddy/blob/develop/packages/website/content/docs/dev/README.md>:
 
 - `ARCHITECTURE.md` — process/module layering beyond the summary above
 - `BUILD.md` — full platform build prerequisites (including the Arch Linux deps added recently)

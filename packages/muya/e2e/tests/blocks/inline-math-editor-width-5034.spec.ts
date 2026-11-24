@@ -1,7 +1,7 @@
 import type { Page } from '@playwright/test';
 import { expect, test } from '../fixtures/muya';
 
-// marktext #5034: the Max width preference stores a percentage, which reaches
+// deskbuddy #5034: the Max width preference stores a percentage, which reaches
 // muya as `--editor-area-width: calc(100px + 80%)`. `.mu-math-render` used to
 // derive its cap from that variable, and its containing block is the inline
 // `.mu-math` around the formula — so the percentage resolved against the
@@ -10,7 +10,7 @@ import { expect, test } from '../fixtures/muya';
 
 const LONG_FORMULA = `$${Array.from({ length: 40 }, (_, i) => `x_{${i}}`).join('+')}$`;
 
-/** Mirror what marktext's `setEditorWidth()` injects for a preference value. */
+/** Mirror what deskbuddy's `setEditorWidth()` injects for a preference value. */
 async function setMaxWidthPreference(page: Page, value: string | null) {
     await page.evaluate((v) => {
         const ID = 'editor-width';

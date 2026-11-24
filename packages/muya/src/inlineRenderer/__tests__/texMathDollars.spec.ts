@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest';
 import { getHighlightHtml } from '../../utils/marked/getHighlightHtml';
 import { tokenizer } from '../lexer';
 
-// marktext/marktext#5446 task 1, fixing #2002 and #5243. The live editor and
+// faidrogo4/DeskBuddy#5446 task 1, fixing #2002 and #5243. The live editor and
 // the marked-based import/export path tokenize `$` math independently, and the
 // two disagreed about the same document: "Revenue rose from $13B to $24B."
 // rendered as KaTeX while editing but stayed literal on export. Both now apply
