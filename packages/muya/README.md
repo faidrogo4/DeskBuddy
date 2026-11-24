@@ -228,7 +228,7 @@ Vite produces three formats (`lib/es/index.js`, `lib/umd/index.js`, `lib/cjs/ind
 
 **What is the relationship between DeskBuddy and Muya?**
 
-Muya is derived from DeskBuddy. The team's goal is for Muya to live outside the desktop app so it can power web editors as well; the Electron-specific assumptions have been progressively peeled away.
+Muya is derived from MarkText. The team's goal is for Muya to live outside the desktop app so it can power web editors as well; the Electron-specific assumptions have been progressively peeled away.
 
 **Does the Muya version track DeskBuddy's version?**
 

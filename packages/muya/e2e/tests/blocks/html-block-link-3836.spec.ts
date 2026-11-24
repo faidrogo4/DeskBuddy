@@ -1,7 +1,7 @@
 import process from 'node:process';
 import { expect, test } from '../fixtures/muya';
 
-// deskbuddy #3836: a link inside a *multi-line* raw HTML block renders into
+// marktext/marktext#3836: a link inside a *multi-line* raw HTML block renders into
 // `.mu-html-preview` as a plain `<a>` (no `mu-raw-html` wrapper class), so the
 // link click handler never matched it and Cmd/Ctrl-click did nothing. Inline
 // `<a href>text</a>` (rendered as `a.mu-raw-html`) already worked.

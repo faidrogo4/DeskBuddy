@@ -240,10 +240,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Website**: [https://github.com/faidrogo4/DeskBuddy](https://github.com/faidrogo4/DeskBuddy)
 - **Documentation**: [DeskBuddy Docs](https://github.com/faidrogo4/DeskBuddy/blob/develop/packages/website/content/docs/README.md)
 
-## 💖 Sponsors
-
-Special thanks to all our sponsors for supporting the DeskBuddy project!
-
 ---
 
 Made with ❤️ by the DeskBuddy Team

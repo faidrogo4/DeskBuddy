@@ -95,7 +95,7 @@ export const UNICODE_WHITESPACE_REG = /^\s/;
 //   U+FF66–U+FF9D  Halfwidth Katakana
 //   U+20000–U+2A6DF  CJK Unified Ideographs Extension B (D840-D87F DC00-DFFF)
 //
-// Tracking: faidrogo4/DeskBuddy#4307.
+// Tracking: marktext/marktext#4307.
 // eslint-disable-next-line regexp/no-obscure-range
 export const CJK_REG = /[぀-ヿ㐀-䶿一-鿿豈-﫿가-힯ｦ-ﾝ]|[\uD840-\uD87F][\uDC00-\uDFFF]/;
 

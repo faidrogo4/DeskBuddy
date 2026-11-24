@@ -1,6 +1,6 @@
 # Nested mixed lists fixture
 
-Regression coverage for deskbuddy#4341.
+Regression coverage for marktext/marktext#4341.
 
 1. Eat a carrot.
 2. Find an application:

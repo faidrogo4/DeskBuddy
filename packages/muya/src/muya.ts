@@ -1537,7 +1537,7 @@ export class Muya {
             : text;
     }
 
-    /** Cycle the heading level (deskbuddy upgrade/degrade semantics). */
+    /** Cycle the heading level (marktext upgrade/degrade semantics). */
     private _changeHeadingLevel(block: Parent, type: 'upgrade heading' | 'degrade heading') {
         const state = block.getState();
         const level = isAtxHeadingState(state) || isSetextHeadingState(state) ? state.meta.level : 0;

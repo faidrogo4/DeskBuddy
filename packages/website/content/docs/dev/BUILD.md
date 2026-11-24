@@ -1,6 +1,6 @@
 # Build Instructions
 
-**Please see [this issue](https://github.com/jacobwhall/deskbuddy/issues/2) for updates on our efforts to modernize this process!**
+**Please see [this issue](https://github.com/jacobwhall/marktext/issues/2) for updates on our efforts to modernize this process!**
 
 Clone the repository:
 

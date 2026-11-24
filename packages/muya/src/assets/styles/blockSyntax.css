@@ -464,7 +464,7 @@ ol.mu-order-list ol.mu-order-list ul.mu-bullet-list {
     list-style-type: square;
 }
 
-/* Focus mode (mirrors deskbuddy muyajs `.ag-focus-mode`): when the editor
+/* Focus mode (mirrors marktext muyajs `.ag-focus-mode`): when the editor
    container carries `mu-focus-mode`, dim every top-level block and restore full
    opacity on the active one. `mu-active` is applied to the whole ancestor chain
    of the focused content block, so the top-level block containing the cursor
@@ -806,7 +806,7 @@ figure.mu-math-block div.mu-math-preview > svg {
     width: 100%;
 }
 
-/* Diagram SVG recoloring — port of deskbuddy's legacy theme block
+/* Diagram SVG recoloring — port of marktext's legacy theme block
    (packages/muyajs/themes/default.css `figure[data-role] svg …`, ~lines
    689-720) adapted to muya's DOM and kebab-cased vars. Mermaid and
    vega-lite render an inline <svg> inside `.mu-diagram-preview`; these
@@ -1007,7 +1007,7 @@ pre.mu-active.mu-fenced-code::after {
     overflow-wrap: anywhere;
 }
 
-/* Footnote definition block — port of deskbuddy's `figure[data-role='FOOTNOTE']`
+/* Footnote definition block — port of marktext's `figure[data-role='FOOTNOTE']`
    styling (src/muya/lib/assets/styles/index.css:194-246) with class prefix
    `ag-` → `mu-` and CSS-var names rebound to the new repo's kebab-case set.
    Layout: tinted figure with the `[^id]:` label absolutely positioned at the

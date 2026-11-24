@@ -1,3 +1,5 @@
+> These releases come from [MarkText](https://github.com/marktext/marktext), the project DeskBuddy was forked from. Issue and PR numbers below refer to that repository.
+
 ## 0.17.1
 
 - Added experimental native support for Apple M1 (see #2983 if you have issues).
@@ -726,7 +728,7 @@ You need uninstall the old version of DeskBuddy before install version 0.10.21, 
 
 **:beetle:Bug fix**
 
-- fix: prevent open image or file directly when drag and drop over DeskBuddy #42
+- fix: prevent open image or file directly when drag and drop over marktext/marktext#42
 - fix: set theme to all the open window not just the active one.
 - fix: set correct application menu offset on windows #44
 - fix: Missing preferences menu in Linux and Windows. @fxha

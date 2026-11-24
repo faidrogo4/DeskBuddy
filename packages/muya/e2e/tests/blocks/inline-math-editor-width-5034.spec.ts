@@ -1,7 +1,7 @@
 import type { Page } from '@playwright/test';
 import { expect, test } from '../fixtures/muya';
 
-// deskbuddy #5034: the Max width preference stores a percentage, which reaches
+// marktext/marktext#5034: the Max width preference stores a percentage, which reaches
 // muya as `--editor-area-width: calc(100px + 80%)`. `.mu-math-render` used to
 // derive its cap from that variable, and its containing block is the inline
 // `.mu-math` around the formula — so the percentage resolved against the

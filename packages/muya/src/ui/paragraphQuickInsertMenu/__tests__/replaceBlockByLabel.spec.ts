@@ -24,16 +24,16 @@ interface IFakeBlock {
     firstContentInDescendant?: () => { text: string; setCursor: ReturnType<typeof vi.fn> };
 }
 
-// Regression for deskbuddy 8891287b "fix paragraph turn into list bug (#1025)".
+// Regression for marktext 8891287b "fix paragraph turn into list bug (#1025)".
 //
-// In deskbuddy, the old `updateCtrl.updateParagraphToList` ran a loop on
+// In marktext, the old `updateCtrl.updateParagraphToList` ran a loop on
 // `text.split('\n')` looking for `LIST_ITEM_REG.test(l)` matches and dropped
 // every line that didn't match into `preParagraphLines`. When the conversion
 // was triggered from the front menu (no `marker` argument), no line ever
 // matched the bullet/order regex, so the entire paragraph contents were
 // silently lost.
 //
-// The deskbuddy fix branched: `if (marker) { …split-and-strip… } else
+// The marktext fix branched: `if (marker) { …split-and-strip… } else
 // { listItemLines = lines /* take the whole input verbatim */ }`.
 //
 // The new architecture has no `updateParagraphToList` at all — front-menu
@@ -111,7 +111,7 @@ function makeFakeMuya(options: { texMathDollars?: boolean } = {}): Muya {
     } as unknown as Muya;
 }
 
-describe('replaceBlockByLabel — paragraph→list keeps text verbatim (deskbuddy 8891287b)', () => {
+describe('replaceBlockByLabel — paragraph→list keeps text verbatim (marktext 8891287b)', () => {
     it('bullet-list: puts plain paragraph text into the first list-item paragraph', () => {
         const { captured, restore } = setupCreateSpy();
         try {
@@ -136,7 +136,7 @@ describe('replaceBlockByLabel — paragraph→list keeps text verbatim (deskbudd
     });
 
     it('does not strip a leading `- ` from the bullet-list text (no marker regex)', () => {
-        // Pre-fix deskbuddy (front-menu trigger, no marker) dropped this entire
+        // Pre-fix marktext (front-menu trigger, no marker) dropped this entire
         // text since no line matched the bullet regex while `isPushedListItemLine`
         // stayed false. New muya must keep it verbatim.
         const { captured, restore } = setupCreateSpy();
@@ -175,7 +175,7 @@ describe('replaceBlockByLabel — paragraph→list keeps text verbatim (deskbudd
     });
 
     it('keeps multi-line text in a single list-item paragraph (no split)', () => {
-        // Pre-fix deskbuddy walked `text.split("\n")` and partitioned lines
+        // Pre-fix marktext walked `text.split("\n")` and partitioned lines
         // into preParagraphLines vs listItemLines. New muya never splits —
         // the whole string goes into one paragraph.
         const { captured, restore } = setupCreateSpy();
