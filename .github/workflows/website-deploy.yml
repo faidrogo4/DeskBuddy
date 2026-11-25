@@ -59,12 +59,19 @@ jobs:
       - name: Next build
         run: pnpm --filter deskbuddy-website run build
 
+      # Everything from here on needs a Cloudflare account. Without the
+      # secrets the steps above still validate the site, and the job passes.
+      - name: Note Cloudflare deploy not configured
+        if: env.CLOUDFLARE_API_TOKEN == ''
+        run: echo "::notice::Cloudflare build and deploy skipped - set the CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID repository secrets to enable them."
+
       - name: OpenNext Cloudflare build
+        if: env.CLOUDFLARE_API_TOKEN != ''
         run: pnpm --filter deskbuddy-website run cf:build
 
       # ---- Production deploy: develop push ----
       - name: Deploy (production)
-        if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
+        if: env.CLOUDFLARE_API_TOKEN != '' && github.event_name == 'push' && github.ref == 'refs/heads/develop'
         run: pnpm --filter deskbuddy-website exec wrangler deploy
 
       # ---- Preview deploy: pull_request ----
@@ -78,7 +85,7 @@ jobs:
       # notice on the PR rather than failing the build.
       - name: Deploy preview
         id: preview
-        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+        if: env.CLOUDFLARE_API_TOKEN != '' && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
         working-directory: packages/website
         run: |
           set +e
