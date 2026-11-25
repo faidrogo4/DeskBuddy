@@ -811,8 +811,14 @@ class Content extends TreeNode {
         type = 'format',
     ) {
     // TODO: @JOCS, remove use this selection directly.
+        // The cache can still be empty here: `clickHandler` refreshes it a
+        // frame late, so a keystroke right after clicking into a pane whose
+        // selection was collapsed arrives first. The `!oldStart` guard below
+        // then skips pairing for that keystroke.
         const { anchor, focus } = this.selection;
-        const oldStart = anchor!.offset <= focus!.offset ? anchor : focus;
+        const oldStart = anchor && focus
+            ? (anchor.offset <= focus.offset ? anchor : focus)
+            : null;
         let needRender = false;
 
         // The event will not be input event, when click task list item input element.
