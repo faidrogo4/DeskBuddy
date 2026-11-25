@@ -34,11 +34,6 @@ export default function Download() {
               </a>
             ))}
           </div>
-          <div className="hero-note hero-note--cta">
-            <span>
-              Or install via Homebrew: <code className="inline">brew install --cask mark-text</code>
-            </span>
-          </div>
         </div>
       </div>
     </section>

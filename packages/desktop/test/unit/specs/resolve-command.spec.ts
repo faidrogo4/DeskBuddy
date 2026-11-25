@@ -65,7 +65,7 @@ describe.skipIf(skipOnWindows)('resolveCommand fallback dirs (#5518)', () => {
   })
 
   it('takes a preferred location over anything on PATH', async() => {
-    // What an installer writes outside PATH, and what MARKTEXT_PANDOC names.
+    // What an installer writes outside PATH, and what DESKBUDDY_PANDOC names.
     const preferred = path.join(home, 'Preferred', 'ls')
     await fs.ensureDir(path.dirname(preferred))
     await fs.writeFile(preferred, '#!/bin/sh\nexit 0\n', { mode: 0o755 })

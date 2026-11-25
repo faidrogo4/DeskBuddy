@@ -1,7 +1,7 @@
 {
-  "name": "marktext",
+  "name": "deskbuddy",
   "version": "0.21.0-dev.2",
-  "description": "MarkText",
+  "description": "DeskBuddy",
   "main": "./out/main/index.js",
   "author": {
     "name": "Jocs",
@@ -25,10 +25,10 @@
       "url": "https://github.com/Tkaixiang"
     }
   ],
-  "homepage": "https://github.com/marktext/marktext",
+  "homepage": "https://github.com/faidrogo4/DeskBuddy",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marktext/marktext.git"
+    "url": "git+https://github.com/faidrogo4/DeskBuddy.git"
   },
   "scripts": {
     "minify-locales": "tsx ../../scripts/minify-locales.ts",

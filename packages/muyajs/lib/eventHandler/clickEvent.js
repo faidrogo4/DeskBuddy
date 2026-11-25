@@ -13,9 +13,9 @@ class ClickEvent {
   contextClickBingding() {
     const { container, eventCenter, contentState } = this.muya
     const handler = (event) => {
-      // Allow native context menu in MarkText.
-      if (!global || !global.marktext) {
-        // __MARKTEXT_PATCH__
+      // Allow native context menu in DeskBuddy.
+      if (!global || !global.deskbuddy) {
+        // __DESKBUDDY_PATCH__
         event.preventDefault()
         event.stopPropagation()
       }

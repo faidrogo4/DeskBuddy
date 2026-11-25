@@ -84,7 +84,7 @@ describe.skipIf(skipOnWindows)('ensureShellEnvPath (#5518)', () => {
   it('ignores output that was cut off before the closing marker', async() => {
     // What a maxBuffer truncation or a killed shell leaves behind.
     const file = path.join(tmpDir, 'truncated-shell')
-    await fs.writeFile(file, '#!/bin/sh\nprintf \'__MARKTEXT_PATH_BEGIN__\\n/half\'\n', {
+    await fs.writeFile(file, '#!/bin/sh\nprintf \'__DESKBUDDY_PATH_BEGIN__\\n/half\'\n', {
       mode: 0o755
     })
     process.env.SHELL = file
@@ -104,10 +104,10 @@ describe.skipIf(skipOnWindows)('ensureShellEnvPath (#5518)', () => {
       file,
       [
         '#!/bin/sh',
-        "printf '__MARKTEXT_PATH_BEGIN__\\n'",
+        "printf '__DESKBUDDY_PATH_BEGIN__\\n'",
         "printf 'p10k: instant prompt active\\n'",
         `printf '${toolDir}:/usr/bin\\n'`,
-        "printf '__MARKTEXT_PATH_END__\\n'"
+        "printf '__DESKBUDDY_PATH_END__\\n'"
       ].join('\n') + '\n',
       { mode: 0o755 }
     )

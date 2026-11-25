@@ -15,7 +15,7 @@ import { tokenizer } from '../lexer';
 // disagreed about every link whose destination was not a bare word: the lexer
 // took everything between `](` and `)` as the destination, so `[link](/my uri)`
 // became a link (CommonMark says it is literal text) while `[link](</my uri>)`
-// kept its pointy brackets in the href and pointed nowhere (marktext#2377).
+// kept its pointy brackets in the href and pointed nowhere (marktext/marktext#2377).
 // `parseSrcAndTitle` now implements CommonMark's destination/title grammar,
 // and this suite holds that line by replaying the spec's own link and image
 // examples through the lexer.

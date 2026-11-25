@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest';
 import { tokenizer } from '../../inlineRenderer/lexer';
 import { renderToStaticHTML } from '../renderToStaticHTML';
 
-// Regression coverage ported from marktext#4307 (legacy desktop spec
+// Regression coverage ported from marktext/marktext#4307 (legacy desktop spec
 // `test/unit/specs/markdown-strong-cjk.spec.ts`). Strong emphasis (`**…**`)
 // whose `**` delimiters sit directly against a CJK character should still be
 // recognised, even when the emphasised content begins/ends with a punctuation

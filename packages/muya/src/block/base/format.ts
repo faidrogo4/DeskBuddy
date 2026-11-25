@@ -1448,7 +1448,7 @@ class Format extends Content {
 
         this.muya.editor.history.markInputBoundary('deleteContentBackward', null);
 
-        // fix: #897 in marktext repo
+        // fix: marktext/marktext#897
         const { text } = this;
         const { footnote, superSubScript, texMathDollars, texMathGfm, texMathSingleBackslash, texMathDoubleBackslash, highlightSyntax, inlineDiff } = this.muya.options;
         const { labels } = this.inlineRenderer;

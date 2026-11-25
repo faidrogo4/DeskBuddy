@@ -47,7 +47,7 @@ describe('inlineFormatToolbar config — required inline format types', () => {
     });
 });
 
-// marktext #3630: the inline_code / inline_math tooltips advertised Cmd/Ctrl+E
+// marktext/marktext#3630: the inline_code / inline_math tooltips advertised Cmd/Ctrl+E
 // and Shift+Cmd/Ctrl+E, but no platform binds those — the defaults are
 // Cmd/Ctrl+` (inline code) and Shift+Cmd/Ctrl+M (inline math). The label must
 // match the actual keybinding.

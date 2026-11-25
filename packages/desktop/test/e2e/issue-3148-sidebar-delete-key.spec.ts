@@ -29,7 +29,7 @@ test.describe('Sidebar Delete key (#3148)', () => {
   let projectDir: string
 
   test.beforeAll(async() => {
-    projectDir = fs.mkdtempSync(path.join(os.tmpdir(), 'marktext-3148-'))
+    projectDir = fs.mkdtempSync(path.join(os.tmpdir(), 'deskbuddy-3148-'))
     fs.writeFileSync(path.join(projectDir, 'note.md'), '# Note\n', 'utf-8')
 
     const launched = await launchElectron([projectDir])

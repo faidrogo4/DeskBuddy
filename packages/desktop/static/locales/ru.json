@@ -96,22 +96,20 @@
       "askQuestion": "Задать вопрос",
       "reportBug": "Сообщить об ошибке",
       "viewSource": "Исходный код",
-      "followUs": "Подписаться на нас",
-      "support": "Поддержать MarkText",
       "license": "Лицензия",
       "about": "О программе",
       "checkUpdates": "Проверить обновления"
     },
-    "marktext": {
-      "title": "MarkText",
-      "about": "О MarkText",
+    "deskbuddy": {
+      "title": "DeskBuddy",
+      "about": "О DeskBuddy",
       "checkUpdates": "Проверить обновления...",
       "preferences": "Настройки",
       "services": "Службы",
-      "hide": "Скрыть MarkText",
+      "hide": "Скрыть DeskBuddy",
       "hideOthers": "Скрыть остальные",
       "showAll": "Показать все",
-      "quit": "Выйти из MarkText"
+      "quit": "Выйти из DeskBuddy"
     },
     "view": {
       "view": "Вид",
@@ -359,7 +357,7 @@
   },
   "import": {
     "title": "Импорт или открытие",
-    "description": "Перетащите сюда, чтобы добавить файлы в MarkText"
+    "description": "Перетащите сюда, чтобы добавить файлы в DeskBuddy"
   },
   "preferences": {
     "title": "Настройки",
@@ -387,10 +385,10 @@
         "hideScrollbar": "Скрывать полосы прокрутки",
         "wordWrapInToc": "Включать перенос слов в оглавлении",
         "fileSortBy": "Сортировать файлы в открытой папке по времени создания, изменения и имени",
-        "startUpAction": "Действие после запуска MarkText: открыть последнее содержимое, указанную папку или пустую страницу",
+        "startUpAction": "Действие после запуска DeskBuddy: открыть последнее содержимое, указанную папку или пустую страницу",
         "restoreLayoutState": "Восстанавливать предыдущее состояние редактора при запуске",
         "defaultDirectoryToOpen": "Папка по умолчанию, открываемая при запуске, если startUp=folder",
-        "language": "Язык интерфейса MarkText",
+        "language": "Язык интерфейса DeskBuddy",
         "editorFontFamily": "Семейство шрифтов редактора",
         "fontSize": "Размер шрифта в пикселях",
         "lineHeight": "Высота строки",
@@ -415,7 +413,7 @@
         "preferLooseListItem": "Предпочитаемый тип списка",
         "bulletListMarker": "Маркер маркированного списка",
         "orderListDelimiter": "Разделитель нумерованного списка",
-        "preferHeadingStyle": "Предпочитаемый стиль заголовков в MarkText",
+        "preferHeadingStyle": "Предпочитаемый стиль заголовков в DeskBuddy",
         "tabSize": "Заменять табуляцию на x пробелов",
         "listIndentation": "Выберите отступ списка",
         "frontmatterType": "Тип front matter",
@@ -432,7 +430,7 @@
         "softNewlineAsSpace": "Считать мягкие переносы строк пробелами",
         "sequenceTheme": "Тема диаграмм последовательностей",
         "plantumlServer": "URL сервера PlantUML",
-        "theme": "Выберите тему, используемую в MarkText",
+        "theme": "Выберите тему, используемую в DeskBuddy",
         "followSystemTheme": "Следовать системной теме",
         "lightModeTheme": "Тема для светлого режима системы",
         "darkModeTheme": "Тема для тёмного режима системы",
@@ -644,7 +642,7 @@
         "pleaseInstall": "Пожалуйста, установите",
         "scriptPath": "Путь к скрипту"
       },
-      "defaultBehavior": "Поведение по умолчанию после вставки или перетаскивания изображения в MarkText"
+      "defaultBehavior": "Поведение по умолчанию после вставки или перетаскивания изображения в DeskBuddy"
     },
     "markdown": {
       "title": "Markdown",
@@ -775,7 +773,7 @@
   },
   "commands": {
     "mt": {
-      "hide": "Скрыть MarkText",
+      "hide": "Скрыть DeskBuddy",
       "hideOthers": "Скрыть остальные"
     },
     "file": {
@@ -927,7 +925,7 @@
     "fileExists": "Файл существует {filename}",
     "files": "Файлы",
     "importWarning": "Предупреждение импорта",
-    "installPandoc": "Pandoc не найден. Установите его или задайте переменную окружения MARKTEXT_PANDOC с путём к бинарнику pandoc и перезапустите MarkText.",
+    "installPandoc": "Pandoc не найден. Установите его или задайте переменную окружения DESKBUDDY_PANDOC с путём к бинарнику pandoc и перезапустите DeskBuddy.",
     "exportWarning": "Предупреждение экспорта",
     "exportWarningMore": "…и ещё {count}",
     "keepOpen": "Оставить открытым",
@@ -944,7 +942,7 @@
     "configSchemaViolation": "Нарушение схемы конфигурации",
     "copyError": "Ошибка копирования",
     "initializationFailed": "Ошибка инициализации {hint}",
-    "otherInstanceDetected": "Другой экземпляр MarkText уже запущен",
+    "otherInstanceDetected": "Другой экземпляр DeskBuddy уже запущен",
     "report": "Сообщить",
     "startupError": "Ошибка запуска",
     "terminatedDueToError": "Завершено из-за ошибки",

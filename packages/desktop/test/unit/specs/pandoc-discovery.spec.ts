@@ -33,7 +33,7 @@ beforeAll(async() => {
   originalPath = process.env.PATH
   originalShell = process.env.SHELL
   originalHome = process.env.HOME
-  originalOverride = process.env.MARKTEXT_PANDOC
+  originalOverride = process.env.DESKBUDDY_PANDOC
 })
 
 beforeEach(() => {
@@ -42,7 +42,7 @@ beforeEach(() => {
   process.env.SHELL = '/usr/sbin/nologin'
   process.env.PATH = '/usr/bin:/bin'
   process.env.HOME = tmpDir
-  delete process.env.MARKTEXT_PANDOC
+  delete process.env.DESKBUDDY_PANDOC
   setPlatform('freebsd')
 })
 
@@ -52,7 +52,7 @@ afterEach(() => {
   restoreEnv('PATH', originalPath)
   restoreEnv('SHELL', originalShell)
   restoreEnv('HOME', originalHome)
-  restoreEnv('MARKTEXT_PANDOC', originalOverride)
+  restoreEnv('DESKBUDDY_PANDOC', originalOverride)
 })
 
 afterAll(async() => {
@@ -100,7 +100,7 @@ describe.skipIf(skipOnWindows)('pandoc discovery (#2751)', () => {
     // binary the user did not name ran instead.
     const notExecutable = path.join(tmpDir, 'pandoc-not-a-binary')
     await fs.writeFile(notExecutable, 'text\n', { mode: 0o644 })
-    process.env.MARKTEXT_PANDOC = notExecutable
+    process.env.DESKBUDDY_PANDOC = notExecutable
     process.env.PATH = `${binDir}:/usr/bin:/bin`
 
     const pandoc = await loadPandoc()

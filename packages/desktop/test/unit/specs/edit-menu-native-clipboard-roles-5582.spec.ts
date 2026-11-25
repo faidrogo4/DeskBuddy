@@ -3,7 +3,7 @@ import { describe, expect, it, vi } from 'vitest'
 // #5582: On macOS, Cmd+V did not paste into editable controls of native
 // Open/Save panels (e.g. the "Go to Folder" sheet). The Edit menu bound Paste
 // to a custom `click` handler that called `webContents.paste()` on the focused
-// MarkText window. While a native panel owns focus there is no focused
+// DeskBuddy window. While a native panel owns focus there is no focused
 // webContents, so the shortcut became a no-op instead of reaching the panel's
 // first responder.
 //

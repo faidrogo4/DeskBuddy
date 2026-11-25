@@ -51,8 +51,8 @@ export const hasSameKeys = (a: Record<string, unknown>, b: Record<string, unknow
 export type LogLevel = 'silly' | 'debug' | 'verbose' | 'info'
 
 export const getLogLevel = (): LogLevel => {
-  const verbose = (globalThis as typeof globalThis & { MARKTEXT_DEBUG_VERBOSE?: number })
-    .MARKTEXT_DEBUG_VERBOSE
+  const verbose = (globalThis as typeof globalThis & { DESKBUDDY_DEBUG_VERBOSE?: number })
+    .DESKBUDDY_DEBUG_VERBOSE
   if (!verbose || typeof verbose !== 'number' || verbose <= 0) {
     return import.meta.env.DEV ? 'debug' : 'info'
   } else if (verbose === 1) {

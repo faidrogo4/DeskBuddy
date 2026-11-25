@@ -138,7 +138,7 @@ export function rankCompletions(
         if (seen.has(key))
             continue;
         seen.add(key);
-        // Keep deliberate mixed case ("MarkText"); otherwise follow the prefix.
+        // Keep deliberate mixed case ("DeskBuddy"); otherwise follow the prefix.
         result.push(word === word.toLowerCase() ? matchCase(prefix, word) : word);
         if (result.length >= limit)
             break;

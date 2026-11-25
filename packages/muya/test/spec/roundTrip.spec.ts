@@ -24,7 +24,7 @@ import StateToMarkdown from '../../src/state/stateToMarkdown';
 const fixturesDir = path.join(
     path.dirname(fileURLToPath(import.meta.url)),
     'fixtures',
-    'marktext-round-trip',
+    'deskbuddy-round-trip',
 );
 
 interface IFixture {

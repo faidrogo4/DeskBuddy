@@ -15,7 +15,7 @@ test.describe('Sidebar rename shortcuts (#1618)', () => {
   let projectDir: string
 
   test.beforeAll(async() => {
-    projectDir = fs.mkdtempSync(path.join(os.tmpdir(), 'marktext-1618-'))
+    projectDir = fs.mkdtempSync(path.join(os.tmpdir(), 'deskbuddy-1618-'))
     fs.writeFileSync(path.join(projectDir, 'first.md'), '# First\n', 'utf-8')
     fs.writeFileSync(path.join(projectDir, 'second.md'), '# Second\n', 'utf-8')
     fs.mkdirSync(path.join(projectDir, 'docs'))

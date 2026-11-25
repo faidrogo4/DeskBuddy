@@ -1,6 +1,6 @@
 # TypeScript
 
-MarkText is a TypeScript project. Every file under `src/`, the build
+DeskBuddy is a TypeScript project. Every file under `src/`, the build
 scripts under `scripts/`, the test specs under `test/`, the build config
 (`electron.vite.config.ts`), and the test configs (`vitest.config.ts`,
 `playwright.config.ts`) are TS.

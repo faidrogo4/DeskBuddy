@@ -181,7 +181,7 @@ describe('serializeTable — column alignment', () => {
     });
 });
 
-// Regression for marktext #3563. Typing a literal `|` into a table cell stores
+// Regression for marktext/marktext#3563. Typing a literal `|` into a table cell stores
 // a bare pipe in the cell's text. `escapeText` used `/([^\\])\|/g`, which
 // requires a non-backslash character *before* the pipe, so a pipe at the start
 // of a cell — or the second of two consecutive pipes (`||`) — was never escaped.

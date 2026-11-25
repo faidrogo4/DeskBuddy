@@ -1,12 +1,7 @@
-<p align="center"><img src="../assets/logo-small.png" alt="MarkText" width="100" height="100"></p>
+<p align="center"><img src="../assets/logo-small.png" alt="DeskBuddy" width="100" height="100"></p>
 
-<h1 align="center">MarkText</h1>
+<h1 align="center">DeskBuddy</h1>
 
-<div align="center">
-  <a href="https://twitter.com/intent/tweet?via=marktextme&url=https://github.com/marktext/marktext/&text=What%20do%20you%20want%20to%20say%20to%20app?&hashtags=happyMarkText">
-    <img src="https://img.shields.io/twitter/url/https/github.com/marktext/marktext.svg?style=for-the-badge" alt="twitter">
-  </a>
-</div>
 <div align="center">
   <strong>:high_brightness: Editor Markdown de nueva generación :crescent_moon:</strong><br>
   Un editor Markdown de código abierto, simple y elegante, enfocado en velocidad y usabilidad.<br>
@@ -18,41 +13,25 @@
 <div align="center">
   <!-- License -->
   <a href="../../LICENSE">
-    <img src="https://img.shields.io/github/license/marktext/marktext.svg" alt="LICENSE">
-  </a>
-  <!-- Downloads total -->
-  <a href="https://github.com/marktext/marktext/releases">
-    <img src="https://img.shields.io/github/downloads/marktext/marktext/total.svg" alt="total download">
-  </a>
-  <!-- Downloads latest release -->
-  <a href="https://github.com/marktext/marktext/releases/latest">
-    <img src="https://img.shields.io/github/downloads/marktext/marktext/v0.17.1/total.svg" alt="latest download">
-  </a>
-  <!-- sponsors -->
-  <a href="https://opencollective.com/marktext">
-    <img src="https://opencollective.com/marktext/tiers/silver-sponsors/badge.svg?label=SilverSponsors&color=brightgreen" alt="sponsors">
+    <img src="https://img.shields.io/github/license/faidrogo4/DeskBuddy.svg" alt="LICENSE">
   </a>
 </div>
 
 <div align="center">
   <h3>
-    <a href="https://github.com/marktext/marktext">
-      Website
-    </a>
-    <span> | </span>
-    <a href="https://github.com/marktext/marktext#features">
+    <a href="../../README.md#features">
       Características
     </a>
     <span> | </span>
-    <a href="https://github.com/marktext/marktext#download-and-installation">
+    <a href="../../README.md#download-and-installation">
       Descarga e Instalación
     </a>
     <span> | </span>
-    <a href="https://github.com/marktext/marktext#development">
+    <a href="../../README.md#development">
       Desarrollo
     </a>
     <span> | </span>
-    <a href="https://github.com/marktext/marktext#contribution">
+    <a href="../../README.md#contribution">
       Contribución
     </a>
   </h3>
@@ -95,36 +74,9 @@
   </a>
 </div>
 
-<div align="center">
-  <sub>Este editor Markdown fue creado con ❤︎ por
-    <a href="https://github.com/Jocs">Jocs</a> y
-    <a href="https://github.com/marktext/marktext/graphs/contributors">
-      colaboradores
-    </a>.</sub>
-</div>
-
-<br />
-
-<h2 align="center">Apoyando a MarkText</h2>
-
-MarkText es un editor de Markdown de código abierto impulsado por el apoyo de su comunidad. Si MarkText mejora tu flujo de trabajo, considera [patrocinar el proyecto](https://github.com/sponsors/marktext). Gracias a todos los patrocinadores ❤️
-
-**Patrocinador Especial**
-
-<table>
-<tr>
-<td width="182"><a href="https://serpapi.com/?utm_source=marktext"><img src="../assets/sponsors/serpapi.png" width="150"></a></td>
-<td align="left"><a href="https://serpapi.com/?utm_source=marktext">Extrae resultados de Google y otros motores de búsqueda con nuestra API rápida, sencilla y completa.</a></td>
-</tr>
-<tr>
-<td width="182"><a href="https://stardesk.onelink.me/p0R7/kpq1jksx"><img src="../assets/sponsors/stardesk.png" width="150"></a></td>
-<td align="left"><a href="https://stardesk.onelink.me/p0R7/kpq1jksx">Deja tu escritorio sin interrumpir tu flujo de trabajo. StarDesk es un escritorio remoto gratuito que te permite acceder a tu PC de desarrollo desde cualquier lugar. Conéctate a tu propio ordenador desde iOS, Android o la web para editar Markdown, ejecutar comandos en la terminal, revisar documentos o retomar donde lo dejaste.</a></td>
-</tr>
-</table>
-
 ## Capturas de pantalla
 
-![](../assets/marktext.png?raw=true)
+![](../assets/deskbuddy.png?raw=true)
 
 ## Características
 
@@ -133,7 +85,7 @@ MarkText es un editor de Markdown de código abierto impulsado por el apoyo de s
 - Extensiones Markdown como expresiones matemáticas (KaTeX), front matter y emojis.
 - Soporte para atajos de párrafo y estilo en línea para mejorar tu eficiencia de escritura.
 - Exportación de archivos **HTML** y **PDF**.
-- Varios [temas](https://marktext.me/docs/themes): **Cadmium Light**, **Material Dark**, etc.
+- Varios [temas](../../packages/website/content/docs/end-user/THEMES.md): **Cadmium Light**, **Material Dark**, etc.
 - Varios modos de edición: **Modo Código Fuente**, **Modo Máquina de Escribir**, **Modo Enfoque**.
 - Pegado de imágenes directamente desde el portapapeles.
 
@@ -141,62 +93,40 @@ MarkText es un editor de Markdown de código abierto impulsado por el apoyo de s
 
 ![Plataforma](https://img.shields.io/static/v1.svg?label=Platform&message=Linux-64%20|%20macOS-64%20|%20Win-32%20|%20Win-64&style=for-the-badge)
 
-|                                             ![](https://raw.githubusercontent.com/wiki/ryanoasis/nerd-fonts/screenshots/v1.0.x/mac-pass-sm.png)                                             |                                             ![](https://raw.githubusercontent.com/wiki/ryanoasis/nerd-fonts/screenshots/v1.0.x/windows-pass-sm.png)                                             |                                                    ![](https://raw.githubusercontent.com/wiki/ryanoasis/nerd-fonts/screenshots/v1.0.x/linux-pass-sm.png)                                                    |
-| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| [![latest version](https://img.shields.io/github/downloads/marktext/marktext/latest/marktext-x64.dmg.svg)](https://github.com/marktext/marktext/releases/download/v0.17.1/marktext-x64.dmg) | [![latest version](https://img.shields.io/github/downloads/marktext/marktext/latest/marktext-setup.exe.svg)](https://github.com/marktext/marktext/releases/download/v0.17.1/marktext-setup.exe) | [![latest version](https://img.shields.io/github/downloads/marktext/marktext/latest/marktext-x86_64.AppImage.svg)](https://github.com/marktext/marktext/releases/download/v0.17.1/marktext-x86_64.AppImage) |
+|                ![](https://raw.githubusercontent.com/wiki/ryanoasis/nerd-fonts/screenshots/v1.0.x/mac-pass-sm.png)                |                ![](https://raw.githubusercontent.com/wiki/ryanoasis/nerd-fonts/screenshots/v1.0.x/windows-pass-sm.png)                |               ![](https://raw.githubusercontent.com/wiki/ryanoasis/nerd-fonts/screenshots/v1.0.x/linux-pass-sm.png)               |
+| :-------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------: |
+| [![Download for macOS](https://img.shields.io/badge/macOS-Download-blue)](https://github.com/faidrogo4/DeskBuddy/releases/latest) | [![Download for Windows](https://img.shields.io/badge/Windows-Download-blue)](https://github.com/faidrogo4/DeskBuddy/releases/latest) | [![Download for Linux](https://img.shields.io/badge/Linux-Download-blue)](https://github.com/faidrogo4/DeskBuddy/releases/latest) |
 
-¿Quieres ver las nuevas funciones de la última versión? Consulta el [CHANGELOG](https://marktext.me/docs/changelog).
+¿Quieres ver las nuevas funciones de la última versión? Consulta el [CHANGELOG](../../packages/website/content/docs/CHANGELOG.md).
 
 #### macOS
 
-Puedes descargar el último `marktext-%version%.dmg` desde la [página de releases](https://github.com/marktext/marktext/releases/latest) o instalar MarkText usando [**homebrew cask**](https://github.com/caskroom/homebrew-cask). Para usar Homebrew-Cask solo necesitas tener [Homebrew](https://brew.sh/) instalado.
-
-```bash
-brew install --cask mark-text
-```
+Descarga el último `deskbuddy-mac-(arm64|x64)-%version%.dmg` desde la [página de releases](https://github.com/faidrogo4/DeskBuddy/releases/latest).
 
 #### Windows
 
-Simplemente descarga e instala MarkText mediante el asistente de configuración (`marktext-setup-%version%.exe`) y elige si instalarlo por usuario o para todo el sistema. Alternativamente, instala MarkText usando un gestor de paquetes como [Chocolatey](https://chocolatey.org/) o [Winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/).
-
-Para usar Chocolatey, necesitas tener [Chocolatey](https://chocolatey.org/install) instalado:
-
-```bash
-choco install marktext
-```
-
-Para usar Winget, necesitas tener [Winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/#install-winget) instalado:
-
-```bash
-winget install marktext
-```
+Simplemente descarga e instala DeskBuddy mediante el asistente de configuración (`deskbuddy-win-(x64|arm64)-%version%-setup.exe`) y elige si instalarlo por usuario o para todo el sistema.
 
 #### Linux
 
-Por favor sigue las [instrucciones de instalación de Linux](https://marktext.me/docs/installation).
+Por favor sigue las [instrucciones de instalación de Linux](../../packages/website/content/docs/end-user/INSTALLATION.md).
 
 #### Otros
 
-Todos los binarios para Linux, macOS y Windows se pueden descargar desde la [página de releases](https://github.com/marktext/marktext/releases/latest). Si no hay una versión disponible para tu sistema, por favor abre un [issue](https://github.com/marktext/marktext/issues).
+Todos los binarios para Linux, macOS y Windows se pueden descargar desde la [página de releases](https://github.com/faidrogo4/DeskBuddy/releases/latest). Si no hay una versión disponible para tu sistema, por favor abre un [issue](https://github.com/faidrogo4/DeskBuddy/issues).
 
 ## Desarrollo
 
-Si deseas compilar MarkText tú mismo, consulta nuestras [instrucciones de compilación](https://marktext.me/docs/dev/build).
+Si deseas compilar DeskBuddy tú mismo, consulta nuestras [instrucciones de compilación](../../packages/website/content/docs/dev/BUILD.md).
 
-- [Documentación de usuario](https://marktext.me/docs/introduction)
-- [Documentación de desarrollador](https://marktext.me/docs/dev/overview)
+- [Documentación de usuario](../../packages/website/content/docs/README.md)
+- [Documentación de desarrollador](../../packages/website/content/docs/dev/README.md)
 
-Si tienes preguntas sobre MarkText, puedes abrir un issue. Por favor usa el formato predeterminado al hacerlo. Por supuesto, si envías un PR directamente, será muy apreciado.
+Si tienes preguntas sobre DeskBuddy, puedes abrir un issue. Por favor usa el formato predeterminado al hacerlo. Por supuesto, si envías un PR directamente, será muy apreciado.
 
 ## Contribución
 
-MarkText está en desarrollo. Por favor lee la [Guía de Contribución](../../.github/CONTRIBUTING.md) antes de hacer un pull request. ¿Quieres añadir funciones a MarkText? Consulta nuestra [hoja de ruta](https://github.com/marktext/marktext/projects) e issues abiertos.
-
-## Colaboradores
-
-Gracias a todas las personas que ya han contribuido a MarkText[[colaboradores](https://github.com/marktext/marktext/graphs/contributors)].
-
-<a href="https://github.com/marktext/marktext/graphs/contributors"><img src="https://opencollective.com/marktext/contributors.svg?width=890" /></a>
+DeskBuddy está en desarrollo. Por favor lee la [Guía de Contribución](../../.github/CONTRIBUTING.md) antes de hacer un pull request.
 
 ## Licencia
 

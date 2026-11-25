@@ -75,7 +75,7 @@ test.describe('#5541: the export render container stays out of the page layout',
   })
 
   test('exporting does not grow the host document', async() => {
-    const out = '/tmp/marktext-e2e-5541-' + Date.now() + '.pdf'
+    const out = '/tmp/deskbuddy-e2e-5541-' + Date.now() + '.pdf'
     await stubSaveDialog(app, out)
     await installContainerProbe(page)
 

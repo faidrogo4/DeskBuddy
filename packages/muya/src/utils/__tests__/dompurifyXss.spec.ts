@@ -96,7 +96,7 @@ describe('marktext 0baf2e9e/7de33f11 — inline html tag XSS defenses', () => {
     });
 });
 
-// marktext #3594 / #3697: the editor's live HTML-block preview forbade the
+// marktext/marktext#3594 / #3697: the editor's live HTML-block preview forbade the
 // `style` attribute while export allowed it, so inline-styled HTML rendered
 // unstyled in the editor. The preview config now matches export — `style`
 // survives, but DOMPurify still strips dangerous attributes.

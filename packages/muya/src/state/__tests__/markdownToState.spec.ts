@@ -220,7 +220,7 @@ describe('markdownToState — task list nesting (marktext 23435ce6)', () => {
     });
 
     it('does not parse `-foo` (no space) as a list item (marktext 70d49c30)', () => {
-        // marktext #832 issuecomment-477719256: `-foo` with no space between
+        // marktext/marktext#832 issuecomment-477719256: `-foo` with no space between
         // the dash and the word was wrongly captured as a list item. A
         // bullet marker must be followed by a space (or newline) to start
         // a list. The new muya uses marked v16's built-in list rule which
@@ -240,7 +240,7 @@ describe('markdownToState — task list nesting (marktext 23435ce6)', () => {
     });
 
     it('splits a mixed task + bullet sequence into two lists (marktext 372fe02f)', () => {
-        // marktext #870: writing
+        // marktext/marktext#870: writing
         //   - [x] foo
         //   - [x] bar
         //   - zar

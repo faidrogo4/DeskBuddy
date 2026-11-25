@@ -16,7 +16,7 @@ function findByType<TType extends Token['type']>(
 
 // Defensive regression tests for the CommonMark 0.29 spec examples that the
 // legacy marktext inline lexer used to fail before commit 57cd04c5 (Apr 2019,
-// marktext PR #957). The new muya's inline lexer (`emphasis.ts` +
+// marktext/marktext#957). The new muya's inline lexer (`emphasis.ts` +
 // `lowerPriority`) implements the CommonMark left/right-flanking rules and
 // the §6.4 rule that "inline code spans, links, images, and HTML tags group
 // more tightly than emphasis", so these inputs are already correct. We lock
@@ -264,7 +264,7 @@ describe('inline lexer — link / image dest with parens (marktext 57af8304 / #1
     });
 });
 
-// Regression for marktext #3778. `lowerPriority` scanned every position for a
+// Regression for marktext/marktext#3778. `lowerPriority` scanned every position for a
 // higher-priority construct (inline math/code/links) that would overlap the
 // emphasis, but treated an escaped `\$` as a real `$` math delimiter — so the
 // first `**bold**` on a line that also contained a later `\$` was suppressed.

@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 // #5582 follow-up: the same "native dialog owns focus" problem applies to the
-// standard Edit actions that MarkText cannot simply turn into native roles.
+// standard Edit actions that DeskBuddy cannot simply turn into native roles.
 //
 // `Undo`, `Redo` and `Select All` are custom because the WYSIWYG editor keeps
 // its own history/selection model (and Select All has to coordinate the

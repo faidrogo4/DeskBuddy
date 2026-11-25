@@ -105,7 +105,7 @@ test.describe('Anchor links (#5292)', () => {
   })
 
   test('an anchor into a document that is already open switches to it and scrolls to the heading', async() => {
-    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'marktext-e2etest-5292-'))
+    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'deskbuddy-e2etest-5292-'))
     const notePath = path.join(tempDir, 'note.md')
     const otherPath = path.join(tempDir, 'other.md')
     fs.writeFileSync(notePath, '[cross](other.md#english-section)\n')

@@ -2,7 +2,7 @@ import { expect, test } from '../fixtures/muya';
 import { editor } from '../helpers/selectors';
 
 /**
- * marktext#4991 — an SVG that states no width/height, only a `viewBox`, has no
+ * marktext/marktext#4991 — an SVG that states no width/height, only a `viewBox`, has no
  * intrinsic size. Such an image resolves its used width against its containing
  * block (CSS 2.1 §10.3.2), but `.mu-image-container` is shrink-to-fit: its
  * width comes from the image, the image's from it, and Chromium settles on 0 —

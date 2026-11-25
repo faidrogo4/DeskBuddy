@@ -83,7 +83,7 @@ describe('useEditorStore LISTEN_FOR_FILE_CHANGE — a file changed on disk', () 
     expect(tab.isSaved).toBe(true)
   })
 
-  // #3652: MarkText as a preview window beside another editor. Reloading a tab
+  // #3652: DeskBuddy as a preview window beside another editor. Reloading a tab
   // the user never touched discards nothing, so it must not depend on autoSave,
   // which writes in the opposite direction and would overwrite the other editor.
   it('reloads a tab without unsaved edits silently, with autoSave off', () => {

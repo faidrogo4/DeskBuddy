@@ -1,10 +1,10 @@
-name = "marktext-website"
+name = "deskbuddy-website"
 main = ".open-next/worker.js"
 compatibility_date = "2025-05-01"
 compatibility_flags = ["nodejs_compat"]
 
 # Enables versioned preview URLs like
-# https://pr-NNN-marktext-website.<subdomain>.workers.dev which the CI workflow
+# https://pr-NNN-deskbuddy-website.<subdomain>.workers.dev which the CI workflow
 # parses out of `wrangler versions upload` output and posts back to PRs.
 preview_urls = true
 
@@ -18,11 +18,11 @@ binding = "ASSETS"
 # an existing A/AAAA/CNAME record, delete it first or the deploy will refuse to
 # bind. www → apex 301 redirect lives in src/middleware.ts.
 [[routes]]
-pattern = "marktext.me"
+pattern = "deskbuddy.example.com"
 custom_domain = true
 
 [[routes]]
-pattern = "www.marktext.me"
+pattern = "www.deskbuddy.example.com"
 custom_domain = true
 
 [observability]

@@ -1,13 +1,13 @@
 import { NextResponse, type NextRequest } from 'next/server'
 
-// 301 www.marktext.me/* -> marktext.me/* so SEO indexes a single canonical
+// 301 www.deskbuddy.example.com/* -> deskbuddy.example.com/* so SEO indexes a single canonical
 // host. We do this in middleware rather than next.config.ts redirects()
 // because OpenNext Cloudflare does not currently substitute Next's `:path*`
 // destination tokens, which sends users to the literal /:path* URL (404).
 export function middleware(req: NextRequest) {
-  if (req.headers.get('host')?.toLowerCase() !== 'www.marktext.me') return
+  if (req.headers.get('host')?.toLowerCase() !== 'www.deskbuddy.example.com') return
   const url = req.nextUrl.clone()
-  url.host = 'marktext.me'
+  url.host = 'deskbuddy.example.com'
   url.protocol = 'https:'
   url.port = ''
   return NextResponse.redirect(url, 301)

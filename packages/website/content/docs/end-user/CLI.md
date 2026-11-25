@@ -1,7 +1,7 @@
 # Command Line Interface
 
 ```
-Usage: marktext [commands] [path ...]
+Usage: deskbuddy [commands] [path ...]
 
   Available commands:
 
@@ -16,46 +16,46 @@ Usage: marktext [commands] [path ...]
     -h, --help                    Print this help message
 ```
 
-## Making `marktext` available in your shell
+## Making `deskbuddy` available in your shell
 
-`marktext` has to point at your installation of MarkText. Where that is — and what you have
+`deskbuddy` has to point at your installation of DeskBuddy. Where that is — and what you have
 to do about it — varies from platform to platform.
 
 ### Linux
 
-The `.deb` and `.rpm` packages already install `/usr/bin/marktext`, and the Snap exposes a
-`marktext` command, so there is nothing to set up. For the AppImage or the tarball, alias the
+The `.deb` and `.rpm` packages already install `/usr/bin/deskbuddy`, and the Snap exposes a
+`deskbuddy` command, so there is nothing to set up. For the AppImage or the tarball, alias the
 binary you extracted:
 
 ```sh
-alias marktext="$HOME/Applications/marktext.AppImage"
+alias deskbuddy="$HOME/Applications/deskbuddy.AppImage"
 ```
 
 ### macOS
 
 ```sh
-alias marktext="/Applications/marktext.app/Contents/MacOS/marktext"
+alias deskbuddy="/Applications/deskbuddy.app/Contents/MacOS/deskbuddy"
 ```
 
 ### Windows
 
-Add the installation directory to your `PATH` — `%LOCALAPPDATA%\Programs\marktext` for a
-default install — or save a wrapper like this one as `marktext.cmd` in a directory that is
+Add the installation directory to your `PATH` — `%LOCALAPPDATA%\Programs\deskbuddy` for a
+default install — or save a wrapper like this one as `deskbuddy.cmd` in a directory that is
 already on it:
 
 ```bat
 @echo off
-"%LOCALAPPDATA%\Programs\marktext\marktext.exe" %*
+"%LOCALAPPDATA%\Programs\deskbuddy\deskbuddy.exe" %*
 ```
 
-Do **not** put a symlink, a hard link or a lone copy of `marktext.exe` on your `PATH`.
+Do **not** put a symlink, a hard link or a lone copy of `deskbuddy.exe` on your `PATH`.
 Chromium looks for `icudtl.dat` and the other bundled resources in the directory of the
 executable path it was launched from, and Windows reports the link's own path rather than the
-target's. MarkText then aborts before it starts, printing only:
+target's. DeskBuddy then aborts before it starts, printing only:
 
 ```
 [ERROR:base\i18n\icu_util.cc:232] Invalid file descriptor to ICU data received.
 ```
 
-Linking is safe on Linux — `/usr/bin/marktext` from the `.deb` and `.rpm` packages is itself a
-symlink into `/opt/marktext` — because the kernel resolves the link before the process starts.
+Linking is safe on Linux — `/usr/bin/deskbuddy` from the `.deb` and `.rpm` packages is itself a
+symlink into `/opt/deskbuddy` — because the kernel resolves the link before the process starts.

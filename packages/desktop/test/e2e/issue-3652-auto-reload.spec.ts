@@ -4,7 +4,7 @@ import fs from 'fs'
 import path from 'path'
 import { launchWithMarkdown, typeIntoEditor } from './helpers'
 
-// #3652 — MarkText open beside another editor. A tab the user never edited
+// #3652 — DeskBuddy open beside another editor. A tab the user never edited
 // discards nothing when it reloads, so it reloads silently; a tab holding
 // unsaved edits must still ask before those edits are thrown away.
 //
@@ -23,7 +23,7 @@ const reloadBannerText = (page: Page) =>
 
 test.describe('Issue #3652 — reloading a file changed on disk', () => {
   test('a tab with no local edits reloads without asking', async() => {
-    const { app, page, filePath } = await launchWithMarkdown('from marktext\n')
+    const { app, page, filePath } = await launchWithMarkdown('from deskbuddy\n')
     await page.waitForTimeout(500)
 
     fs.writeFileSync(filePath, 'from another editor\n', 'utf-8')
@@ -38,7 +38,7 @@ test.describe('Issue #3652 — reloading a file changed on disk', () => {
   })
 
   test('a tab with unsaved edits asks before discarding them', async() => {
-    const { app, page, filePath } = await launchWithMarkdown('from marktext\n')
+    const { app, page, filePath } = await launchWithMarkdown('from deskbuddy\n')
     await page.waitForTimeout(500)
 
     await typeIntoEditor(page, ' edited here')

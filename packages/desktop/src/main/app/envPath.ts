@@ -91,8 +91,8 @@ export const patchEnvPath = (): void => {
 // space-separated. The value is fenced because startup files and per-command
 // hooks print freely around it; the closing marker doubles as proof that the
 // output was not cut short.
-const BEGIN_MARKER = '__MARKTEXT_PATH_BEGIN__'
-const END_MARKER = '__MARKTEXT_PATH_END__'
+const BEGIN_MARKER = '__DESKBUDDY_PATH_BEGIN__'
+const END_MARKER = '__DESKBUDDY_PATH_END__'
 const SHELL_COMMAND = `echo ${BEGIN_MARKER}; printenv PATH; echo ${END_MARKER}`
 const SHELL_TIMEOUT = 5000
 // Node's 1MB default is within reach of a chatty startup file.

@@ -23,7 +23,7 @@ export default function loadImageAsync(
 
     const cached = this.loadImageMap.get(src);
     // Retry when the previous load failed: a transient failure should not
-    // permanently poison the cache (marktext#3001 / #3010, commit bca2ed62).
+    // permanently poison the cache (marktext/marktext#3001 / #3010, commit bca2ed62).
     if (!cached || !cached.isSuccess) {
         id = getUniqueId();
         // Cache-bust local files so a fresh load reads the file off disk

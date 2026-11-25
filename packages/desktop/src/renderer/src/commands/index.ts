@@ -632,7 +632,7 @@ const commands: CommandDescriptor[] = [
   },
 
   // --------------------------------------------------------------------------
-  // MarkText
+  // DeskBuddy
 
   {
     id: 'file.preferences',
@@ -650,7 +650,7 @@ const commands: CommandDescriptor[] = [
     id: 'docs.user-guide',
     execute: async() => {
       window.electron.shell.openExternal(
-        'https://marktext.me/docs/basics'
+        'https://github.com/faidrogo4/DeskBuddy/blob/develop/packages/website/content/docs/end-user/BASICS.md'
       )
     }
   },
@@ -658,7 +658,7 @@ const commands: CommandDescriptor[] = [
     id: 'docs.markdown-syntax',
     execute: async() => {
       window.electron.shell.openExternal(
-        'https://marktext.me/docs/markdown-syntax'
+        'https://github.com/faidrogo4/DeskBuddy/blob/develop/packages/website/content/docs/end-user/MARKDOWN_SYNTAX.md'
       )
     }
   },

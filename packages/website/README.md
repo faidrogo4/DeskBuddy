@@ -1,4 +1,4 @@
-# MarkText Website
+# DeskBuddy Website
 
 
 
@@ -6,7 +6,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-purple?logo=vite&logoColor=white)](https://vitejs.dev/)
 
-The official website for [MarkText](https://github.com/marktext/marktext) - A simple and elegant markdown editor.
+The official website for [DeskBuddy](https://github.com/faidrogo4/DeskBuddy) - A simple and elegant markdown editor.
 
 ## ✨ Features
 
@@ -38,7 +38,7 @@ npm install -g pnpm
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/marktext/website.git
+git clone https://github.com/deskbuddy/website.git
 cd website
 ```
 
@@ -102,7 +102,7 @@ This project is configured to automatically deploy to GitHub Pages using GitHub 
 2. Under **Source**, select **GitHub Actions**
 3. Push to the `master` branch or manually trigger the workflow
 
-The site will be available at: `https://marktext.github.io/website/`
+The site will be available at: `https://deskbuddy.github.io/website/`
 
 #### Manual Deployment
 
@@ -236,14 +236,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🔗 Links
 
-- **Main Project**: [MarkText Editor](https://github.com/marktext/marktext)
-- **Website**: [https://marktext.me](https://marktext.me)
-- **Documentation**: [MarkText Docs](https://marktext.me/docs)
-
-## 💖 Sponsors
-
-Special thanks to all our sponsors for supporting the MarkText project!
+- **Main Project**: [DeskBuddy Editor](https://github.com/faidrogo4/DeskBuddy)
+- **Website**: [https://github.com/faidrogo4/DeskBuddy](https://github.com/faidrogo4/DeskBuddy)
+- **Documentation**: [DeskBuddy Docs](https://github.com/faidrogo4/DeskBuddy/blob/develop/packages/website/content/docs/README.md)
 
 ---
 
-Made with ❤️ by the MarkText Team
+Made with ❤️ by the DeskBuddy Team

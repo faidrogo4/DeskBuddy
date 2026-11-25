@@ -304,7 +304,7 @@ describe('autoPair — per-option opt-out', () => {
     });
 });
 
-// ── marktext #3573 absorb manually typed closing markdown marker ──────────
+// ── marktext/marktext#3573 absorb manually typed closing markdown marker ──────────
 // With auto-pair on, typing `_` inserts `_|_`. Typing text then the closing
 // `_` should "type over" the auto-paired closing marker (-> `_text_`), but
 // the old `shouldRemoveClosingChar` only absorbed when the char two before

@@ -96,22 +96,20 @@
       "askQuestion": "Ask Question",
       "reportBug": "Report Bug",
       "viewSource": "View Source",
-      "followUs": "Follow Us",
-      "support": "Support MarkText",
       "license": "License",
       "about": "About",
       "checkUpdates": "Check for Updates"
     },
-    "marktext": {
-      "title": "MarkText",
-      "about": "About MarkText",
+    "deskbuddy": {
+      "title": "DeskBuddy",
+      "about": "About DeskBuddy",
       "checkUpdates": "Check for Updates...",
       "preferences": "Preferences",
       "services": "Services",
-      "hide": "Hide MarkText",
+      "hide": "Hide DeskBuddy",
       "hideOthers": "Hide Others",
       "showAll": "Show All",
-      "quit": "Quit MarkText"
+      "quit": "Quit DeskBuddy"
     },
     "view": {
       "view": "View",
@@ -359,7 +357,7 @@
   },
   "import": {
     "title": "Import or Open",
-    "description": "Drop here to get your stuff into MarkText"
+    "description": "Drop here to get your stuff into DeskBuddy"
   },
   "preferences": {
     "title": "Preferences",
@@ -387,10 +385,10 @@
         "hideScrollbar": "Whether to hide scrollbars",
         "wordWrapInToc": "Whether to enable word wrap in TOC",
         "fileSortBy": "Sort files in opened folder by created time, modified time and title",
-        "startUpAction": "The action after MarkText startup, open the last edited content, open the specified folder or blank page",
+        "startUpAction": "The action after DeskBuddy startup, open the last edited content, open the specified folder or blank page",
         "restoreLayoutState": "Restore previous editor state on startup",
         "defaultDirectoryToOpen": "The default directory that should be opened on startup when startUp=folder",
-        "language": "The language MarkText uses",
+        "language": "The language DeskBuddy uses",
         "editorFontFamily": "Editor font family",
         "fontSize": "Font size in pixels",
         "lineHeight": "Line Height",
@@ -415,7 +413,7 @@
         "preferLooseListItem": "The preferred list type",
         "bulletListMarker": "The marker used in bullet list",
         "orderListDelimiter": "The delimiter used in order list",
-        "preferHeadingStyle": "The preferred heading style in MarkText",
+        "preferHeadingStyle": "The preferred heading style in DeskBuddy",
         "tabSize": "Replace the tab with x spaces",
         "listIndentation": "Select the indent of list",
         "frontmatterType": "The frontmatter type",
@@ -432,7 +430,7 @@
         "softNewlineAsSpace": "Treat soft newlines as spaces",
         "sequenceTheme": "Sequence diagram theme",
         "plantumlServer": "PlantUML server URL",
-        "theme": "Select the theme used in MarkText",
+        "theme": "Select the theme used in DeskBuddy",
         "followSystemTheme": "Follow System Theme",
         "lightModeTheme": "Theme to use when system is in light mode",
         "darkModeTheme": "Theme to use when system is in dark mode",
@@ -644,7 +642,7 @@
         "pleaseInstall": "Please install",
         "scriptPath": "Script path"
       },
-      "defaultBehavior": "The default behavior after pasting or dragging the image to MarkText"
+      "defaultBehavior": "The default behavior after pasting or dragging the image to DeskBuddy"
     },
     "markdown": {
       "title": "Markdown",
@@ -775,7 +773,7 @@
   },
   "commands": {
     "mt": {
-      "hide": "Hide MarkText",
+      "hide": "Hide DeskBuddy",
       "hideOthers": "Hide Others"
     },
     "file": {
@@ -927,7 +925,7 @@
     "fileExists": "File exists {filename}",
     "files": "Files",
     "importWarning": "Import warning",
-    "installPandoc": "Pandoc was not found. Install it, or set the MARKTEXT_PANDOC environment variable to the pandoc binary and restart MarkText.",
+    "installPandoc": "Pandoc was not found. Install it, or set the DESKBUDDY_PANDOC environment variable to the pandoc binary and restart DeskBuddy.",
     "exportWarning": "Export warning",
     "exportWarningMore": "…and {count} more",
     "keepOpen": "Keep open",
@@ -944,7 +942,7 @@
     "configSchemaViolation": "Configuration schema violation",
     "copyError": "Copy error",
     "initializationFailed": "Initialization failed {hint}",
-    "otherInstanceDetected": "Another instance of MarkText is already running",
+    "otherInstanceDetected": "Another instance of DeskBuddy is already running",
     "report": "Report",
     "startupError": "Startup error",
     "terminatedDueToError": "Terminated due to error",
