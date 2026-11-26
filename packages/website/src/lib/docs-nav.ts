@@ -97,7 +97,7 @@ export const DOC_TABS: DocTab[] = [
       {
         label: 'Release',
         pages: [
-          { slug: ['dev', 'release'], title: 'Release process', file: 'dev/RELEASE.md', hint: 'Cut a public release' },
+          { slug: ['dev', 'release'], title: 'Shipping DeskBuddy', file: 'dev/RELEASE.md', hint: 'From a PR to your installed app' },
           { slug: ['dev', 'hotfix'], title: 'Hotfix release', file: 'dev/RELEASE_HOTFIX.md', hint: 'Patch a published release' }
         ]
       },

@@ -3,7 +3,8 @@
 - Create a hotfix branch: `git checkout -b hotfix-vX.Y.Z`
 - Make changes to the code and/or `cherry-pick` changes from another branch and commit changes.
 - Test the hotfix and binaries.
-- [Release](RELEASE.md) a new DeskBuddy version.
+- Bump the version in `package.json` and `packages/desktop/package.json` (see [Shipping DeskBuddy, step 4](RELEASE.md#4-bump-the-version)).
+- Push a matching tag from the hotfix branch: `git tag vX.Y.Z && git push origin vX.Y.Z`. The **Run workflow** button only releases from `develop`, so a hotfix release starts from a tag.
 
 **How to cherry pick?**
 

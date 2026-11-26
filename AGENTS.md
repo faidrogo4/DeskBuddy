@@ -296,3 +296,11 @@ See `packages/website/content/docs/dev/IPC.md` for conventions and examples.
 - Run `pnpm run lint` before submitting.
 - All PRs must pass CI before merge.
 - See `.github/CONTRIBUTING.md` for the full contributing guide.
+
+## Shipping
+
+`packages/website/content/docs/dev/RELEASE.md` is the path from a PR to the installed app. In short:
+
+- One change per PR into `develop`. In the PR's test plan, say what you did not test as well as what you did.
+- A release is a version bump in **both** `package.json` and `packages/desktop/package.json` (merged via PR), then **Actions → Release DeskBuddy → Run workflow** on `develop`. The workflow tags `v<version>` itself; don't push release tags from an agent session.
+- The installed app updates through **Help → Check for Updates**.

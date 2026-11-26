@@ -60,9 +60,11 @@ Output installers land in the repository's `dist/` folder.
 
 ## Updating
 
-DeskBuddy checks for updates on launch (this can be disabled under **Preferences → General → Updates**). When an update is published, the app downloads it in the background and installs on next restart.
+DeskBuddy checks for updates when you ask it to: **Help → Check for Updates** on Windows and Linux, or **DeskBuddy → Check for Updates** on macOS. If a newer release is published, it offers to download it, then installs it when you restart.
 
-Portable installs and the AppImage do not auto-update — re-download the latest artifact when you want to upgrade.
+Update checks are available in the Windows setup install (`-setup.exe`), the AppImage and the macOS app. The Windows zip, the tarball and the `.deb`, `.rpm` and `.snap` packages don't update themselves; download the newer file from the [release page](https://github.com/faidrogo4/DeskBuddy/releases) instead.
+
+An installed pre-release (a version like `0.21.0-dev.3`) is also offered newer pre-releases. A stable version is only offered stable releases.
 
 ## Uninstall
 

@@ -98,7 +98,9 @@ jobs:
   comment-on-pr:
     name: Comment artifact links on PR
     needs: run-on-pr-head
-    if: github.event.pull_request.head.repo.full_name == github.repository
+    # Link whichever installers built: one platform stuck without a runner
+    # (macos-15 has queued until cancelled before) shouldn't hide the rest.
+    if: ${{ !cancelled() && github.event.pull_request.head.repo.full_name == github.repository }}
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
