@@ -80,7 +80,7 @@ In the installed app: **Help → Check for Updates** (on macOS, **DeskBuddy → 
 The release page should have:
 
 - **Windows x64** and **arm64** (3 each): `setup.exe`, `setup.exe.blockmap`, `zip`
-- **Update manifest**: `latest.yml` for a stable version. A pre-release names it after its tag instead (`dev.yml` for `0.21.0-dev.3`). It lists both architectures; the app picks the installer matching its own.
+- **Update manifest**: `latest.yml`, for pre-releases too. It lists both architectures; the app picks the installer matching its own. (An installed pre-release first looks for a manifest named after its tag, like `dev.yml`, and falls back to `latest.yml`.)
 - `builder-debug.yml` and `SHA256SUMS.txt`
 - Release notes listing the PRs merged since the previous release
 
