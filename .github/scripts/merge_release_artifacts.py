@@ -1,11 +1,10 @@
 """Flatten per-platform release artifacts into one folder for publishing.
 
-Each platform build uploads its installers plus an electron-updater manifest,
-named after the update channel: latest.yml for a stable version, dev.yml for
-0.21.0-dev.3, and so on, with -mac / -linux suffixes. Builds for the same OS
-write the same manifest name (both Windows builds write latest.yml, both macOS
-builds write latest-mac.yml), so copying them
-into one folder makes one overwrite the other. The surviving manifest then
+Each platform build uploads its installers plus an electron-updater manifest
+(latest.yml, latest-mac.yml, latest-linux.yml; a configured update channel
+would replace "latest"). Builds for the same OS write the same manifest name,
+both Windows builds latest.yml and both macOS builds latest-mac.yml, so copying
+them into one folder makes one overwrite the other. The surviving manifest then
 lists only one architecture, and electron-updater falls back to whatever
 installer it lists, which can hand an x64 PC the arm64 installer.
 

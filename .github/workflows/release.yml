@@ -74,10 +74,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        # Windows only for now. The Linux and macOS build steps below still
+        # work; to ship those platforms again, restore their matrix entries
+        # from commit 479bbb77.
         include:
-          - name: linux
-            os: ubuntu-22.04
-            platform: linux
           - name: windows-x64
             os: windows-latest
             platform: windows
@@ -85,14 +85,6 @@ jobs:
           - name: windows-arm64
             os: windows-11-arm
             platform: windows
-            arch: arm64
-          - name: macos-x64
-            os: macos-15-intel
-            platform: macos
-            arch: x64
-          - name: macos-arm64
-            os: macos-15
-            platform: macos
             arch: arm64
 
     steps:
@@ -226,8 +218,7 @@ jobs:
         run: |
           python -m pip install --quiet pyyaml==6.0.3
           python .github/scripts/merge_release_artifacts.py artifacts dist \
-            deskbuddy-linux deskbuddy-windows-x64 deskbuddy-windows-arm64 \
-            deskbuddy-macos-x64 deskbuddy-macos-arm64
+            deskbuddy-windows-x64 deskbuddy-windows-arm64
 
       - name: Generate SHA256SUMS.txt
         working-directory: dist
@@ -255,12 +246,14 @@ jobs:
               sed 's/^deskbuddy-/- /' missing-platforms.txt
               echo ""
             fi
-            echo "## ⚠️ Note for macOS users"
-            echo "Builds are unsigned (no Apple Developer ID). After dragging DeskBuddy into Applications, clear the quarantine flag once:"
-            echo '```'
-            echo 'xattr -cr /Applications/deskbuddy.app'
-            echo '```'
-            echo ""
+            if compgen -G 'dist/*.dmg' > /dev/null; then
+              echo "## ⚠️ Note for macOS users"
+              echo "Builds are unsigned (no Apple Developer ID). After dragging DeskBuddy into Applications, clear the quarantine flag once:"
+              echo '```'
+              echo 'xattr -cr /Applications/deskbuddy.app'
+              echo '```'
+              echo ""
+            fi
             echo "## Verifying downloads"
             echo "All artifacts are listed with their SHA-256 in \`SHA256SUMS.txt\`. Verify with:"
             echo '```'
